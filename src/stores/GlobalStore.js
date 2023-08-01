@@ -2,16 +2,24 @@ import {makeAutoObservable} from "mobx";
 
 export default class GlobalStore {
     constructor() {
-        this._bool = false
-        this._var = {}
+        this._city = null
+        this._institut = null
         makeAutoObservable(this)
     }
 
-    setFunc(bool) {
-        this._bool = bool
+    setCity(id) {
+        this._city = id
     }
 
-    get getFunc() {
-        return this._bool
+    setInstitut(id) {
+        this._institut = id
+    }
+
+    get getCity() {
+        return this._city
+    }
+
+    get getInstitut() {
+        return this._institut
     }
 }

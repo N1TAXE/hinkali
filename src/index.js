@@ -13,7 +13,7 @@ root.render(
           globals: new GlobalStore(),
       }}>
         <App />
-      </Context.Provider>,
+      </Context.Provider>
   </React.StrictMode>
 );
 

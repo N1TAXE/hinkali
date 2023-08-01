@@ -1,3 +1,10 @@
 html, body {
   font-family: "Tilda Sans", serif;
+  min-height: 100vh;
+  overflow-x: hidden;
+  font-feature-settings: "lnum";
+}
+
+body {
+  min-width: 360px;
 }
