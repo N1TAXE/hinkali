@@ -57,10 +57,53 @@ html, body {
   min-height: 100vh;
   overflow-x: hidden;
   font-feature-settings: "lnum";
+  font-style: normal;
 }
 
 body {
   min-width: 360px;
+}
+
+.tab-bar {
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  box-shadow: 0px -4px 20px 0px rgba(0, 0, 0, 0.12);
+}
+.tab-bar__list {
+  display: flex;
+  padding: 6px 0;
+}
+.tab-bar__item {
+  flex: 1 0 0;
+}
+.tab-bar__link {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+}
+.tab-bar__link small {
+  font-size: 12px;
+  line-height: 16px;
+  font-weight: 700;
+  color: #808080;
+}
+.tab-bar__link.active small {
+  color: #8D191D;
+}
+.tab-bar__link.active .tab-bar__img svg {
+  fill: #8D191D;
+}
+.tab-bar__img {
+  width: 24px;
+  height: 24px;
+}
+.tab-bar__img svg {
+  fill: #808080;
 }
 
 /*# sourceMappingURL=style.css.map */

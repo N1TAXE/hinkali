@@ -1,6 +1,8 @@
 import React, {useContext, useEffect} from 'react';
 import {observer} from "mobx-react-lite";
 import {Context} from "../index";
+import TabBar from "../components/TabBar";
+
 
 const MainPage = observer(() => {
     const {globals} = useContext(Context)
@@ -11,9 +13,7 @@ const MainPage = observer(() => {
     })
 
     return (
-        <div>
-            mainPage
-        </div>
+        <TabBar/>
     );
 });
 
