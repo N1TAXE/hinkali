@@ -1,0 +1,19 @@
+.map {
+  position: relative;
+  &__topbar {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    position: absolute;
+    width: 100%;
+    padding: 4px;
+    background: #fff;
+    box-shadow: 0 0 16px 0 rgba(17, 17, 17, 0.40);
+    z-index: 1;
+
+    color: $c-black;
+    font-size: 18px;
+    font-weight: 700;
+    line-height: 20px;
+  }
+}

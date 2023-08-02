@@ -106,7 +106,7 @@ const CitySelect = observer(() => {
 
     const handleApply = () => {
         if (select || select === 0) {
-            globals.setCity(select)
+            globals.setCity(citiesList.find((city) => city.id === select))
         }
     }
 
