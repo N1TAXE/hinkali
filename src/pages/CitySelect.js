@@ -22,52 +22,56 @@ const CitySelect = observer(() => {
         {
             id: 0,
             title: 'Алушта',
-            insitutes: 2
+            insitutes: 2,
+            coords: [44.676411, 34.410129]
         },
         {
             id: 1,
             title: 'Анапа',
-            insitutes: 1
+            insitutes: 1,
+            coords: [44.894818, 37.316367]
         },
         {
             id: 2,
             title: 'Бахчисарай',
-            insitutes: 4
+            insitutes: 4,
+            coords: [44.744997, 33.848035]
         },
         {
             id: 3,
             title: 'Белгород',
-            insitutes: 1
+            insitutes: 1,
+            coords: [50.595414, 36.587277]
         },
         {
             id: 4,
             title: 'Великий Новгород',
-            insitutes: 1
+            insitutes: 1,
+            coords: [58.522857, 31.269816]
         },
         {
             id: 5,
             title: 'Воронеж',
-            insitutes: 1
+            insitutes: 1,
+            coords: [51.660781, 39.200296]
         },
         {
             id: 6,
             title: 'Геленджик',
-            insitutes: 1
+            insitutes: 1,
+            coords: [44.561012, 38.077115]
         },
         {
             id: 7,
-            title: 'Доброе',
-            insitutes: 1
+            title: 'Евпатория',
+            insitutes: 2,
+            coords: [45.190635, 33.367643]
         },
         {
             id: 8,
-            title: 'Евпатория',
-            insitutes: 2
-        },
-        {
-            id: 9,
             title: 'Екатеринбург',
-            insitutes: 3
+            insitutes: 3,
+            coords: [56.838011, 60.597474]
         }
     ]
 

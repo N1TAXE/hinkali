@@ -382,5 +382,47 @@ body {
   font-weight: 700;
   line-height: 20px;
 }
+.map__search {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  padding: 16px;
+}
+.map__search .input__item {
+  border-radius: 14px;
+  box-shadow: 0px 0px 16px 0px rgba(17, 17, 17, 0.4);
+}
+.map__search button {
+  box-shadow: 0px 0px 16px 0px rgba(17, 17, 17, 0.4);
+}
+.map__institute {
+  position: absolute;
+  width: 100%;
+  border-radius: 17px 17px 0px 0px;
+  overflow: hidden;
+  background: #fff;
+  bottom: 0;
+}
+.map__institute-wrapper {
+  z-index: 2;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: var(--background, rgba(19, 42, 62, 0.5));
+  backdrop-filter: blur(2px);
+}
+.map__institute img {
+  width: 100%;
+  max-height: 202px;
+}
+.map__institute-content {
+  padding: 16px;
+}
 
 /*# sourceMappingURL=style.css.map */
