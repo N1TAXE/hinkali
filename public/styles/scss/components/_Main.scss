@@ -9,3 +9,40 @@ html, body {
 body {
   min-width: 360px;
 }
+
+.d-flex {
+  display: flex;
+}
+
+.flex-center {
+  align-items: center;
+}
+
+.gap {
+  &-4 {
+    gap: 4px;
+  }
+  &-16 {
+    gap: 16px;
+  }
+}
+
+.modal {
+  &:not(.react-draggable-dragging) {
+    transition: transform ease .3s;
+  }
+  position: absolute;
+  width: 100%;
+  bottom: 0;
+  &:before {
+    position: absolute;
+    content: '';
+    width: 48px;
+    height: 4px;
+    background-color: #fff;
+    border-radius: 8px;
+    left: 50%;
+    transform: translateX(-50%);
+    top: -12px;
+  }
+}

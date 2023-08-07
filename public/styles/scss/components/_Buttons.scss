@@ -17,6 +17,25 @@
     justify-content: space-between;
   }
 
+  &-mini {
+    &.btn-icon {
+      padding: 8px;
+    }
+    padding: 4px;
+    gap: 4px;
+
+    font-size: 13px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 20px;
+
+    i {
+      &:before {
+        font-size: 12px;
+      }
+    }
+  }
+
   &-tiny {
     &.btn-icon {
       padding: 8px;
@@ -95,4 +114,5 @@
 
 }
 
-@include btn("red", $c-red);
+@include btn("red", $c-red, #fff);
+@include btn("gray", #E6E6E6, #8D191D);

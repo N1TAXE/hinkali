@@ -1,32 +1,26 @@
-@mixin btn($name, $background-color) {
+@mixin btn($name, $background-color, $text-color) {
   .btn-#{$name} {
-    color: #fff;
+    color: $text-color;
 
     background-color: $background-color;
     transition-property: color, background-color;
     transition-duration: .3s;
     transition-timing-function: ease;
     &:hover {
-      color: #fff;
+      color: $text-color;
       background-color: lighten($background-color, 3%);
     }
     &:active {
-      color: darken(#fff, 7%);
+      color: darken($text-color, 7%);
       i {
         &:before {
-          color: darken(#fff, 7%);
+          color: darken($text-color, 7%);
         }
       }
       background-color: darken($background-color, 7%);
     }
     &[disabled] {
-      color: darken(#fff, 15%);
-      i {
-        &:before {
-          color: darken(#fff, 15%);
-        }
-      }
-      background-color: darken($background-color, 15%);
+      opacity: .5;
     }
   }
 }
