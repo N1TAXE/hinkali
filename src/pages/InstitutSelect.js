@@ -6,6 +6,7 @@ import icon from '../assets/images/icons/marker_static.png'
 import axios from "axios";
 import {iconSearch} from "../components/Icons";
 import ModalCard from "../components/ModalCard";
+import { Carousel } from 'react-responsive-carousel';
 
 const InstitutSelect = observer(() => {
     const [isOpened, setIsOpened] = useState(false)
@@ -18,6 +19,21 @@ const InstitutSelect = observer(() => {
     const counterDigits = counterString.padStart(9, '0').split('');
 
     const mult = 0.1
+
+    const images = [
+        {
+            src:
+                "https://media-cdn.tripadvisor.com/media/photo-s/17/ed/de/23/2.jpg"
+        },
+        {
+            src:
+                "https://media-cdn.tripadvisor.com/media/photo-s/17/ed/dd/b3/caption.jpg"
+        },
+        {
+            src:
+                "https://manezhkursk.ru/wp-content/uploads/2022/11/sh-0037.jpg"
+        }
+    ];
 
     const cityCoordinates = globals.getCity.coords;
     const bboxN = [
@@ -79,7 +95,14 @@ const InstitutSelect = observer(() => {
                 <ModalCard setIsOpened={setIsOpened}>
                     <div className="modal">
                         <div className="map__institute-info">
-                            <img src="https://avatars.mds.yandex.net/get-altay/918124/2a0000018650e73ce37cce07b7348e8cec9e/XXXL" alt=""/>
+                            <Carousel showThumbs={false} showArrows={false} showStatus={false}>
+                                {images.map((image, index) => (
+                                    <img
+                                        key={index}
+                                        src={image.src}
+                                     alt=""/>
+                                ))}
+                            </Carousel>
                             <div className="map__institute-content">
                                 <div className="institute-header">
                                     <div className="institute-header__address">
