@@ -9,7 +9,10 @@ import ModalCard from "../components/ModalCard";
 import { Carousel } from 'react-responsive-carousel';
 
 const InstitutSelect = observer(() => {
-    const [isOpened, setIsOpened] = useState(false)
+    const [isOpenedMain, setIsOpenedMain] = useState(false)
+    const [isOpenedSchedule, setIsOpenedSchedule] = useState(false)
+    const [isOpenedBook, setIsOpenedBook] = useState(false)
+    const [isOpenedBookAccess, setIsOpenedBookAccess] = useState(false)
     const [places, setPlaces] = useState([]);
     const [isLoading, setIsLoading] = useState(true);
     const {globals} = useContext(Context)
@@ -69,9 +72,6 @@ const InstitutSelect = observer(() => {
     }, []);
 
 
-    const handleMarkClick = () => {
-        setIsOpened(true)
-    }
 
     useEffect(() => {
         if (places) {
@@ -91,10 +91,10 @@ const InstitutSelect = observer(() => {
 
     return (
         <div className="map">
-            {isOpened &&
-                <ModalCard setIsOpened={setIsOpened}>
+            {isOpenedMain &&
+                <ModalCard setIsOpened={setIsOpenedMain}>
                     <div className="modal">
-                        <div className="map__institute-info">
+                        <div className="modal__wrapper map__institute-info">
                             <Carousel showThumbs={false} showArrows={false} showStatus={false}>
                                 {images.map((image, index) => (
                                     <img
@@ -143,7 +143,7 @@ const InstitutSelect = observer(() => {
                                     </div>
                                 </div>
                                 <div className="institute-phone">
-                                    <button className="btn btn-mini btn-gray no-drag">
+                                    <button onClick={() => setIsOpenedSchedule(true)} className="btn btn-mini btn-gray no-drag">
                                         <svg width="17" height="16" viewBox="0 0 17 16" fill="none" xmlns="http://www.w3.org/2000/svg">
                                             <path d="M9.16671 7.7335V5.3335C9.16671 5.14461 9.10282 4.98627 8.97504 4.8585C8.84726 4.73072 8.68893 4.66683 8.50004 4.66683C8.31115 4.66683 8.15282 4.73072 8.02504 4.8585C7.89726 4.98627 7.83337 5.14461 7.83337 5.3335V7.9835C7.83337 8.07239 7.85004 8.1585 7.88337 8.24183C7.91671 8.32516 7.96671 8.40016 8.03337 8.46683L10.2334 10.6668C10.3556 10.7891 10.5112 10.8502 10.7 10.8502C10.8889 10.8502 11.0445 10.7891 11.1667 10.6668C11.2889 10.5446 11.35 10.3891 11.35 10.2002C11.35 10.0113 11.2889 9.85572 11.1667 9.7335L9.16671 7.7335ZM8.50004 14.6668C7.57782 14.6668 6.71115 14.4918 5.90004 14.1418C5.08893 13.7918 4.38337 13.3168 3.78337 12.7168C3.18337 12.1168 2.70837 11.4113 2.35837 10.6002C2.00837 9.78905 1.83337 8.92239 1.83337 8.00016C1.83337 7.07794 2.00837 6.21127 2.35837 5.40016C2.70837 4.58905 3.18337 3.8835 3.78337 3.2835C4.38337 2.6835 5.08893 2.2085 5.90004 1.8585C6.71115 1.5085 7.57782 1.3335 8.50004 1.3335C9.42226 1.3335 10.2889 1.5085 11.1 1.8585C11.9112 2.2085 12.6167 2.6835 13.2167 3.2835C13.8167 3.8835 14.2917 4.58905 14.6417 5.40016C14.9917 6.21127 15.1667 7.07794 15.1667 8.00016C15.1667 8.92239 14.9917 9.78905 14.6417 10.6002C14.2917 11.4113 13.8167 12.1168 13.2167 12.7168C12.6167 13.3168 11.9112 13.7918 11.1 14.1418C10.2889 14.4918 9.42226 14.6668 8.50004 14.6668Z" fill="#8D191D"/>
                                         </svg>
@@ -226,7 +226,7 @@ const InstitutSelect = observer(() => {
                                         </svg>
                                         Самовывоз
                                     </button>
-                                    <button className="btn btn-mini btn-gray no-drag">
+                                    <button onClick={() => setIsOpenedBook(true)} className="btn btn-mini btn-gray no-drag">
                                         <svg width="17" height="16" viewBox="0 0 17 16" fill="none" xmlns="http://www.w3.org/2000/svg">
                                             <path d="M5.14995 8.6665H11.8833L11.7166 7.33317H5.33328L5.14995 8.6665ZM3.93328 13.3332C3.73328 13.3332 3.5694 13.2582 3.44162 13.1082C3.31384 12.9582 3.26106 12.7832 3.28328 12.5832L3.99995 7.33317H2.51662C2.2944 7.33317 2.1194 7.24428 1.99162 7.0665C1.86384 6.88873 1.82773 6.69428 1.88328 6.48317L2.83328 3.14984C2.87773 3.00539 2.95551 2.88873 3.06662 2.79984C3.17773 2.71095 3.31106 2.6665 3.46662 2.6665H13.5666C13.7222 2.6665 13.8555 2.71095 13.9666 2.79984C14.0777 2.88873 14.1555 3.00539 14.2 3.14984L15.15 6.48317C15.2055 6.69428 15.1694 6.88873 15.0416 7.0665C14.9138 7.24428 14.7388 7.33317 14.5166 7.33317H13.05L13.75 12.5832C13.7722 12.7832 13.7194 12.9582 13.5916 13.1082C13.4638 13.2582 13.3 13.3332 13.1 13.3332C12.9333 13.3332 12.7861 13.2804 12.6583 13.1748C12.5305 13.0693 12.4555 12.9332 12.4333 12.7665L12.0666 9.99984H4.96662L4.59995 12.7665C4.57773 12.9332 4.50273 13.0693 4.37495 13.1748C4.24717 13.2804 4.09995 13.3332 3.93328 13.3332Z" fill="#8D191D"/>
                                         </svg>
@@ -243,7 +243,162 @@ const InstitutSelect = observer(() => {
                         </div>
                     </div>
                 </ModalCard>
-                    }
+            }
+            {isOpenedSchedule &&
+                <ModalCard setIsOpened={setIsOpenedSchedule}>
+                    <div className="modal">
+                        <div className="modal__wrapper">
+                            <div className="modal__header">
+                                <svg className="no-drag" onClick={() => setIsOpenedSchedule(false)} width="48" height="48" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M31 23.0002H19.83L24.71 18.1202C25.1 17.7302 25.1 17.0902 24.71 16.7002C24.32 16.3102 23.69 16.3102 23.3 16.7002L16.71 23.2902C16.32 23.6802 16.32 24.3102 16.71 24.7002L23.3 31.2902C23.69 31.6802 24.32 31.6802 24.71 31.2902C25.1 30.9002 25.1 30.2702 24.71 29.8802L19.83 25.0002H31C31.55 25.0002 32 24.5502 32 24.0002C32 23.4502 31.55 23.0002 31 23.0002Z" fill="#8D191D"/>
+                                </svg>
+                                Режим работы
+                            </div>
+                            <div className="modal__content">
+                                <ul className="map__schedule-list">
+                                    <li>
+                                        <span>Понедельник</span>
+                                        <span>10:00–21:00</span>
+                                    </li>
+                                    <li className="active">
+                                        <span>Вторник</span>
+                                        <span>10:00–21:00</span>
+                                    </li>
+                                    <li>
+                                        <span>Среда</span>
+                                        <span>10:00–21:00</span>
+                                    </li>
+                                    <li>
+                                        <span>Четверг</span>
+                                        <span>10:00–21:00</span>
+                                    </li>
+                                    <li>
+                                        <span>Пятница</span>
+                                        <span>10:00–22:00</span>
+                                    </li>
+                                    <li>
+                                        <span>Субота</span>
+                                        <span>10:00–22:00</span>
+                                    </li>
+                                    <li>
+                                        <span>Воскресенье</span>
+                                        <span>10:00–21:00</span>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </ModalCard>
+            }
+            {isOpenedBook &&
+                <ModalCard setIsOpened={setIsOpenedBook}>
+                    <div className="modal">
+                        <div className="modal__wrapper">
+                            <div className="modal__header">
+                                <svg className="no-drag" onClick={() => setIsOpenedBook(false)} width="48" height="48" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M30.3 17.71C29.91 17.32 29.28 17.32 28.89 17.71L24 22.59L19.11 17.7C18.72 17.31 18.09 17.31 17.7 17.7C17.31 18.09 17.31 18.72 17.7 19.11L22.59 24L17.7 28.89C17.31 29.28 17.31 29.91 17.7 30.3C18.09 30.69 18.72 30.69 19.11 30.3L24 25.41L28.89 30.3C29.28 30.69 29.91 30.69 30.3 30.3C30.69 29.91 30.69 29.28 30.3 28.89L25.41 24L30.3 19.11C30.68 18.73 30.68 18.09 30.3 17.71Z" fill="#8D191D"/>
+                                </svg>
+                                Забронировать столик
+                            </div>
+                            <div className="modal__content gap-8">
+                                <div className="input__item input_icon no-drag">
+                                    <label htmlFor="address">Заведение</label>
+                                    <div className="input__container">
+                                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                            <path d="M12 12C12.55 12 13.0208 11.8042 13.4125 11.4125C13.8042 11.0208 14 10.55 14 10C14 9.45 13.8042 8.97917 13.4125 8.5875C13.0208 8.19583 12.55 8 12 8C11.45 8 10.9792 8.19583 10.5875 8.5875C10.1958 8.97917 10 9.45 10 10C10 10.55 10.1958 11.0208 10.5875 11.4125C10.9792 11.8042 11.45 12 12 12ZM12 19.35C14.0333 17.4833 15.5417 15.7875 16.525 14.2625C17.5083 12.7375 18 11.3833 18 10.2C18 8.38333 17.4208 6.89583 16.2625 5.7375C15.1042 4.57917 13.6833 4 12 4C10.3167 4 8.89583 4.57917 7.7375 5.7375C6.57917 6.89583 6 8.38333 6 10.2C6 11.3833 6.49167 12.7375 7.475 14.2625C8.45833 15.7875 9.96667 17.4833 12 19.35ZM12 21.625C11.8667 21.625 11.7333 21.6 11.6 21.55C11.4667 21.5 11.35 21.4333 11.25 21.35C8.81667 19.2 7 17.2042 5.8 15.3625C4.6 13.5208 4 11.8 4 10.2C4 7.7 4.80417 5.70833 6.4125 4.225C8.02083 2.74167 9.88333 2 12 2C14.1167 2 15.9792 2.74167 17.5875 4.225C19.1958 5.70833 20 7.7 20 10.2C20 11.8 19.4 13.5208 18.2 15.3625C17 17.2042 15.1833 19.2 12.75 21.35C12.65 21.4333 12.5333 21.5 12.4 21.55C12.2667 21.6 12.1333 21.625 12 21.625Z" fill="#999999"/>
+                                        </svg>
+                                        <input placeholder="ул. Турецкая, 25, Симферополь" name="address" type="text"/>
+                                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                            <path d="M8.11997 9.29006L12 13.1701L15.88 9.29006C16.27 8.90006 16.9 8.90006 17.29 9.29006C17.68 9.68006 17.68 10.3101 17.29 10.7001L12.7 15.2901C12.31 15.6801 11.68 15.6801 11.29 15.2901L6.69997 10.7001C6.30997 10.3101 6.30997 9.68006 6.69997 9.29006C7.08997 8.91006 7.72997 8.90006 8.11997 9.29006Z" fill="#999999"/>
+                                        </svg>
+                                    </div>
+                                </div>
+                                <div className="d-flex flex-center gap-8">
+                                    <div className="input__item no-drag">
+                                        <label htmlFor="name">Имя</label>
+                                        <div className="input__container">
+                                            <input placeholder="Имя" name="name" type="text"/>
+                                        </div>
+                                    </div>
+                                    <div className="input__item no-drag">
+                                        <label htmlFor="surname">Фамилия</label>
+                                        <div className="input__container">
+                                            <input placeholder="Фамилия" name="surname" type="text"/>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div className="d-flex flex-center gap-8">
+                                    <div className="input__item no-drag">
+                                        <label htmlFor="phone">Телефон</label>
+                                        <div className="input__container">
+                                            <input placeholder="+7 (___) ___-__-__" name="phone" type="number"/>
+                                        </div>
+                                    </div>
+                                    <div className="input__item no-drag">
+                                        <label htmlFor="person">Персон</label>
+                                        <div className="input__container">
+                                            <input value="1" name="person" type="number"/>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div className="d-flex flex-center gap-8">
+                                    <div className="input__item no-drag">
+                                        <label htmlFor="date">Дата</label>
+                                        <div className="input__container">
+                                            <input placeholder="__.__.____" name="date" type="date"/>
+
+                                        </div>
+                                    </div>
+                                    <div className="input__item no-drag">
+                                        <label htmlFor="time">Время</label>
+                                        <div className="input__container">
+                                            <input placeholder="__:__" name="time" type="time"/>
+                                        </div>
+                                    </div>
+                                </div>
+                                <p>
+                                    После заполнения заявки с вами свяжется администратор
+                                </p>
+                                <button onClick={() => {
+                                    setIsOpenedBookAccess(true)
+                                }
+                                } className="btn btn-sm btn-red no-drag">
+                                    Забронировать
+                                </button>
+                                <button onClick={() => setIsOpenedBook(false)} className="btn btn-sm btn-gray no-drag">
+                                    Отменить
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </ModalCard>
+            }
+            {isOpenedBookAccess &&
+                <ModalCard setIsOpened={setIsOpenedBookAccess}>
+                    <div className="modal">
+                        <div className="modal__wrapper">
+                            <div className="modal__header">
+                                <svg className="no-drag" onClick={() => setIsOpenedBookAccess(false)} width="48" height="48" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M30.3 17.71C29.91 17.32 29.28 17.32 28.89 17.71L24 22.59L19.11 17.7C18.72 17.31 18.09 17.31 17.7 17.7C17.31 18.09 17.31 18.72 17.7 19.11L22.59 24L17.7 28.89C17.31 29.28 17.31 29.91 17.7 30.3C18.09 30.69 18.72 30.69 19.11 30.3L24 25.41L28.89 30.3C29.28 30.69 29.91 30.69 30.3 30.3C30.69 29.91 30.69 29.28 30.3 28.89L25.41 24L30.3 19.11C30.68 18.73 30.68 18.09 30.3 17.71Z" fill="#8D191D"/>
+                                </svg>
+                                Ваша заявка отправлена
+                            </div>
+                            <div className="modal__content gap-8">
+                                <p>
+                                    В ближайшее время с вами свяжется наш администратор и уточнит детали
+                                </p>
+                                <button onClick={() => {
+                                    setIsOpenedBookAccess(false)
+                                    setIsOpenedBook(false)
+                                }
+                                } className="btn btn-sm btn-red no-drag">
+                                    Хорошо
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </ModalCard>
+            }
             <div onClick={handleBack} className="map__topbar">
                 <svg width="48" height="48" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
                     <path d="M31 23.0002H19.83L24.71 18.1202C25.1 17.7302 25.1 17.0902 24.71 16.7002C24.32 16.3102 23.69 16.3102 23.3 16.7002L16.71 23.2902C16.32 23.6802 16.32 24.3102 16.71 24.7002L23.3 31.2902C23.69 31.6802 24.32 31.6802 24.71 31.2902C25.1 30.9002 25.1 30.2702 24.71 29.8802L19.83 25.0002H31C31.55 25.0002 32 24.5502 32 24.0002C32 23.4502 31.55 23.0002 31 23.0002Z" fill="#8D191D"/>
@@ -270,7 +425,7 @@ const InstitutSelect = observer(() => {
                             {places && places.map((place, index) => (
                                 <Placemark
                                     key={index}
-                                    onClick={handleMarkClick}
+                                    onClick={() => setIsOpenedMain(true)}
                                     geometry={[place.lat, place.lng]}
                                     options={{
                                         iconLayout: 'default#image',

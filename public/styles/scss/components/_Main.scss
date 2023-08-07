@@ -22,6 +22,9 @@ body {
   &-4 {
     gap: 4px;
   }
+  &-8 {
+    gap: 8px;
+  }
   &-16 {
     gap: 16px;
   }
@@ -44,5 +47,37 @@ body {
     left: 50%;
     transform: translateX(-50%);
     top: -12px;
+  }
+  &__wrapper {
+    display: flex;
+    flex-direction: column;
+    background: #fff;
+    overflow: hidden;
+    border-radius: 17px 17px 0px 0px;
+  }
+  &__header {
+    display: flex;
+    padding: 4px;
+    align-items: center;
+    align-self: stretch;
+
+    color: $c-black;
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 20px;
+  }
+  &__content {
+    display: flex;
+    flex-direction: column;
+    padding: 16px;
+    p {
+      color: $c-gray;
+      text-align: center;
+      font-size: 12px;
+      font-style: normal;
+      font-weight: 400;
+      line-height: 16px;
+    }
   }
 }

@@ -6,15 +6,20 @@
 
   &.input_icon {
     position: relative;
-    &_left {
-      img {
+    img, svg {
+      &:first-child {
         position: absolute;
         left: 16px;
       }
-      .input__container {
-        input {
-          padding-left: 44px;
-        }
+      &:last-child {
+        position: absolute;
+        right: 16px;
+      }
+    }
+    .input__container {
+      input {
+        padding-left: 44px;
+        padding-right: 44px;
       }
     }
   }
