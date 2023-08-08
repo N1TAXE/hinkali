@@ -127,9 +127,9 @@ const CitySelect = observer(() => {
             <div className="select__header">
                 <img src={iconLogo} alt="Старик Хинкалыч"/>
             </div>
-            <div className="select__title">
+            <h3 className="select__title">
                 {citiesList.reduce((total, city) => total + city.insitutes, 0)} хинкальная в {citiesList.length} городах
-            </div>
+            </h3>
             <div className="select__search">
                 <div className="input__item input_icon input_icon_left">
                     <label htmlFor="search">Выберите город</label>

@@ -13,6 +13,7 @@
       padding: 8px 16px;
 
       &-geo,&-phone{
+        padding: 8px 0;
         display: flex;
         align-items: center;
         gap: 4px;
@@ -198,8 +199,10 @@
           justify-content: center;
           height: 160px;
 
-          & img{
+          img{
             border-radius: 17px 17px 0 0;
+            width: 160px;
+            height: 160px;
 
             .ended &{
               opacity: 0.4;
@@ -229,6 +232,7 @@
         }
 
         &.ended {
+          pointer-events: none;
           .catalogue-content__cards__card-sale {
             opacity: .4;
           }
@@ -383,5 +387,148 @@
   }
 
   //Content end
+
+}
+
+.product {
+  &__modal {
+    &-buttons {
+      display: flex;
+      width: 360px;
+      padding: 8px 16px;
+      align-items: center;
+      gap: 8px;
+      background: #fff;
+      box-shadow: 0px -4px 20px 0px rgba(0, 0, 0, 0.12);
+      button {
+        width: 100%;
+      }
+      .input__counter {
+        width: 100%;
+      }
+    }
+    &-content {
+      display: flex;
+      flex-direction: column;
+      overflow-y: auto;
+      svg {
+        z-index: 1;
+      }
+    }
+    &-desc {
+      padding: 8px 16px;
+    }
+    &-close {
+      position: absolute;
+      right: 4px;
+      top: 4px;
+    }
+    &-img {
+      position: relative;
+      display: flex;
+      align-self: center;
+      justify-content: center;
+    }
+    &-discount {
+      display: flex;
+      transform: rotate(-5deg);
+      padding: 0px 2px;
+      justify-content: center;
+      align-items: center;
+      gap: 4px;
+      position: absolute;
+      left: 16px;
+      bottom: 16px;
+      border-radius: 4px;
+      background: $c-red;
+
+      color: #fff;
+      text-align: center;
+      font-size: 32px;
+      font-style: normal;
+      font-weight: 700;
+      line-height: 36px;
+    }
+    &-header {
+      padding: 8px 16px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+
+      &-price {
+        display: flex;
+        align-items: flex-end;
+        gap: 8px;
+        flex-shrink: 0;
+        .product-oldprice {
+          position: relative;
+          color: $c-black;
+          font-size: 18px;
+          font-style: normal;
+          font-weight: 400;
+          line-height: 24px; /* 133.333% */
+          &:after {
+            position: absolute;
+            content: '';
+            left: 0;
+            top: 50%;
+            transform: rotate(-15deg) translateX(5%);
+            width: 100%;
+            height: 2px;
+            background: $c-red;
+          }
+
+        }
+        .product-price {
+          color: $c-red;
+          font-size: 32px;
+          font-style: normal;
+          font-weight: 700;
+          line-height: 36px; /* 112.5% */
+        }
+      }
+    }
+    &-additional {
+      padding: 8px 16px;
+      display: flex;
+      flex-direction: column;
+
+      h3 {
+        display: flex;
+        padding: 8px 0;
+        align-items: flex-start;
+        gap: 4px;
+      }
+
+      .additional-item {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        align-self: stretch;
+
+        .input__checkbox {
+          width: 100%;
+        }
+      }
+    }
+    &-info {
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+      padding: 8px 16px;
+      small {
+        color: $c-gray;
+      }
+      &-list {
+        display: flex;
+        align-items: center;
+        gap: 16px;
+        .info-item {
+          display: flex;
+          flex-direction: column;
+        }
+      }
+    }
+  }
 
 }

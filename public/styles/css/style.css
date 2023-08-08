@@ -57,6 +57,50 @@ table {
   font-family: "Tilda Sans";
   src: url("../fonts/TildaSans-VF.ttf") format("truetype"), url("../fonts/TildaSans-VF.woff") format("woff"), url("../fonts/TildaSans-VF.woff2") format("woff2");
 }
+@media screen and (max-width: 768px) {
+  h1 {
+    font-size: 32px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 36px;
+  }
+  h2 {
+    font-size: 24px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 28px;
+  }
+  h3 {
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 20px;
+  }
+  h4 {
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 20px;
+  }
+  h5 {
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 16px; /* 114.286% */
+  }
+  p {
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 20px;
+  }
+  small {
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 16px; /* 114.286% */
+  }
+}
 .btn {
   font-family: "Tilda Sans";
   cursor: pointer;
@@ -214,6 +258,10 @@ body {
   align-items: center;
 }
 
+.justify-end {
+  justify-content: flex-end;
+}
+
 .flex-column {
   flex-direction: column;
 }
@@ -250,20 +298,25 @@ body {
 .modal__wrapper {
   display: flex;
   flex-direction: column;
-  background: #fff;
   overflow: hidden;
+  background: #fff;
   border-radius: 17px 17px 0px 0px;
+}
+.modal__bg {
+  z-index: 2;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: var(--background, rgba(19, 42, 62, 0.5));
+  backdrop-filter: blur(2px);
 }
 .modal__header {
   display: flex;
   padding: 4px;
   align-items: center;
   align-self: stretch;
-  color: #111;
-  font-size: 18px;
-  font-style: normal;
-  font-weight: 700;
-  line-height: 20px;
 }
 .modal__content {
   display: flex;
@@ -272,11 +325,7 @@ body {
 }
 .modal__content p {
   color: #999;
-  text-align: center;
-  font-size: 12px;
-  font-style: normal;
-  font-weight: 400;
-  line-height: 16px;
+  padding-bottom: 8px;
 }
 
 .input__item {
@@ -337,6 +386,88 @@ body {
   font-style: normal;
   font-weight: 400;
   line-height: 24px;
+}
+
+.input__checkbox {
+  display: flex;
+  align-items: center;
+}
+.input__checkbox .checkbox {
+  position: relative;
+  display: flex;
+  padding: 8px;
+  align-items: flex-start;
+  gap: 4px;
+}
+.input__checkbox .checkbox input {
+  -webkit-appearance: none;
+  appearance: none;
+  font: inherit;
+  color: currentColor;
+  width: 18px;
+  margin: 0;
+  height: 18px;
+  border: 2px solid #B3B3B3;
+  border-radius: 0.15em;
+  transform: translateY(-0.075em);
+}
+.input__checkbox .checkbox input:checked {
+  border: 0;
+  background-color: #8D191D;
+}
+.input__checkbox .checkbox input:checked + svg {
+  display: block;
+}
+.input__checkbox .checkbox svg {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -60%);
+  display: none;
+}
+.input__checkbox-label {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+.input__checkbox-label span {
+  color: #999;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 20px; /* 125% */
+}
+
+.input__counter {
+  display: flex;
+  align-items: center;
+  border-radius: 12px;
+  border: 1px solid #E6E6E6;
+  background: #fff;
+}
+.input__counter-sm {
+  padding: 9px;
+}
+.input__counter svg {
+  flex-shrink: 0;
+}
+.input__counter input {
+  font-family: "Tilda Sans";
+  display: flex;
+  max-width: 144px;
+  justify-content: space-between;
+  align-items: center;
+  text-align: center;
+  outline: none;
+  border: 0;
+  height: 100%;
+  padding: 0;
+  width: 100%;
+  color: #111;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 20px; /* 142.857% */
 }
 
 .filter {
@@ -859,10 +990,6 @@ body {
   background: #fff;
   box-shadow: 0 0 16px 0 rgba(17, 17, 17, 0.4);
   z-index: 1;
-  color: #111;
-  font-size: 18px;
-  font-weight: 700;
-  line-height: 20px;
 }
 .map__search {
   width: 100%;
@@ -901,16 +1028,6 @@ body {
   background: rgba(0, 0, 0, 0.4);
   backdrop-filter: blur(2px);
 }
-.map__institute-wrapper {
-  z-index: 2;
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100vw;
-  height: 100vh;
-  background: var(--background, rgba(19, 42, 62, 0.5));
-  backdrop-filter: blur(2px);
-}
 .map__institute-info img {
   width: 100%;
   max-height: 202px;
@@ -924,13 +1041,6 @@ body {
   display: flex;
   flex-direction: column;
   gap: 8px;
-}
-.map__institute-content .institute-header__address {
-  color: #111;
-  font-size: 18px;
-  font-style: normal;
-  font-weight: 700;
-  line-height: 20px;
 }
 .map__institute-content .institute-header__rating {
   display: flex;
@@ -968,13 +1078,6 @@ body {
   display: flex;
   align-items: center;
   justify-content: space-between;
-}
-.map__institute-content .institute-counter span {
-  color: #111;
-  font-size: 16px;
-  font-style: normal;
-  font-weight: 700;
-  line-height: 20px;
 }
 .map__institute-content .institute-counter .counter-wrapper {
   display: flex;
@@ -1073,6 +1176,7 @@ body {
   padding: 8px 16px;
 }
 .catalogue-header__info-geo, .catalogue-header__info-phone {
+  padding: 8px 0;
   display: flex;
   align-items: center;
   gap: 4px;
@@ -1210,6 +1314,8 @@ body {
 }
 .catalogue-content__cards__card-img img {
   border-radius: 17px 17px 0 0;
+  width: 160px;
+  height: 160px;
 }
 .ended .catalogue-content__cards__card-img img {
   opacity: 0.4;
@@ -1232,6 +1338,9 @@ body {
   font-size: 14px;
   font-weight: 700;
   line-height: 16px;
+}
+.catalogue-content__cards__card.ended {
+  pointer-events: none;
 }
 .catalogue-content__cards__card.ended .catalogue-content__cards__card-sale {
   opacity: 0.4;
@@ -1351,6 +1460,138 @@ body {
 }
 .ended .catalogue-content__cards__card__button a svg {
   fill: #BFBFBF;
+}
+
+.product__modal-buttons {
+  display: flex;
+  width: 360px;
+  padding: 8px 16px;
+  align-items: center;
+  gap: 8px;
+  background: #fff;
+  box-shadow: 0px -4px 20px 0px rgba(0, 0, 0, 0.12);
+}
+.product__modal-buttons button {
+  width: 100%;
+}
+.product__modal-buttons .input__counter {
+  width: 100%;
+}
+.product__modal-content {
+  display: flex;
+  flex-direction: column;
+  overflow-y: auto;
+}
+.product__modal-content svg {
+  z-index: 1;
+}
+.product__modal-desc {
+  padding: 8px 16px;
+}
+.product__modal-close {
+  position: absolute;
+  right: 4px;
+  top: 4px;
+}
+.product__modal-img {
+  position: relative;
+  display: flex;
+  align-self: center;
+  justify-content: center;
+}
+.product__modal-discount {
+  display: flex;
+  transform: rotate(-5deg);
+  padding: 0px 2px;
+  justify-content: center;
+  align-items: center;
+  gap: 4px;
+  position: absolute;
+  left: 16px;
+  bottom: 16px;
+  border-radius: 4px;
+  background: #8D191D;
+  color: #fff;
+  text-align: center;
+  font-size: 32px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 36px;
+}
+.product__modal-header {
+  padding: 8px 16px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.product__modal-header-price {
+  display: flex;
+  align-items: flex-end;
+  gap: 8px;
+  flex-shrink: 0;
+}
+.product__modal-header-price .product-oldprice {
+  position: relative;
+  color: #111;
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 24px; /* 133.333% */
+}
+.product__modal-header-price .product-oldprice:after {
+  position: absolute;
+  content: "";
+  left: 0;
+  top: 50%;
+  transform: rotate(-15deg) translateX(5%);
+  width: 100%;
+  height: 2px;
+  background: #8D191D;
+}
+.product__modal-header-price .product-price {
+  color: #8D191D;
+  font-size: 32px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 36px; /* 112.5% */
+}
+.product__modal-additional {
+  padding: 8px 16px;
+  display: flex;
+  flex-direction: column;
+}
+.product__modal-additional h3 {
+  display: flex;
+  padding: 8px 0;
+  align-items: flex-start;
+  gap: 4px;
+}
+.product__modal-additional .additional-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  align-self: stretch;
+}
+.product__modal-additional .additional-item .input__checkbox {
+  width: 100%;
+}
+.product__modal-info {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  padding: 8px 16px;
+}
+.product__modal-info small {
+  color: #999;
+}
+.product__modal-info-list {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+.product__modal-info-list .info-item {
+  display: flex;
+  flex-direction: column;
 }
 
 /*# sourceMappingURL=style.css.map */

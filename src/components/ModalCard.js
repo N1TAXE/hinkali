@@ -29,7 +29,7 @@ const ModalCard = ({setIsOpened, children, data}) => {
     }, [])
 
     return (
-        <div onClick={(e) => handleClick(e)} ref={wrapperRef} className="map__institute-wrapper">
+        <div onClick={(e) => handleClick(e)} ref={wrapperRef} className="modal__bg">
             <Draggable
                 axis="y"
                 onStop={handleDrag}

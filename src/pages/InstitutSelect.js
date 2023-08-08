@@ -113,9 +113,9 @@ const InstitutSelect = observer(() => {
                             </Carousel>
                             <div className="map__institute-content">
                                 <div className="institute-header">
-                                    <div className="institute-header__address">
+                                    <h3>
                                         ул.Турецкая, 25, Симферополь
-                                    </div>
+                                    </h3>
                                     <div className="d-flex gap-16 flex-center">
                                         <div className="institute-header__rating">
                                             <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -141,7 +141,7 @@ const InstitutSelect = observer(() => {
                                     </div>
                                 </div>
                                 <div className="institute-counter">
-                                    <span>Съедено хинкали</span>
+                                    <h4>Съедено хинкали</h4>
                                     <div className="counter-wrapper">
                                         {counterDigits && counterDigits.map((n,i) => (
                                             <div key={i} className="counter-item">
@@ -260,7 +260,7 @@ const InstitutSelect = observer(() => {
                                 <svg className="no-drag" onClick={() => setIsOpenedSchedule(false)} width="48" height="48" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
                                     <path d="M31 23.0002H19.83L24.71 18.1202C25.1 17.7302 25.1 17.0902 24.71 16.7002C24.32 16.3102 23.69 16.3102 23.3 16.7002L16.71 23.2902C16.32 23.6802 16.32 24.3102 16.71 24.7002L23.3 31.2902C23.69 31.6802 24.32 31.6802 24.71 31.2902C25.1 30.9002 25.1 30.2702 24.71 29.8802L19.83 25.0002H31C31.55 25.0002 32 24.5502 32 24.0002C32 23.4502 31.55 23.0002 31 23.0002Z" fill="#8D191D"/>
                                 </svg>
-                                Режим работы
+                                <h3>Режим работы</h3>
                             </div>
                             <div className="modal__content">
                                 <ul className="map__schedule-list">
@@ -306,7 +306,7 @@ const InstitutSelect = observer(() => {
                                 <svg className="no-drag" onClick={() => setIsOpenedBook(false)} width="48" height="48" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
                                     <path d="M30.3 17.71C29.91 17.32 29.28 17.32 28.89 17.71L24 22.59L19.11 17.7C18.72 17.31 18.09 17.31 17.7 17.7C17.31 18.09 17.31 18.72 17.7 19.11L22.59 24L17.7 28.89C17.31 29.28 17.31 29.91 17.7 30.3C18.09 30.69 18.72 30.69 19.11 30.3L24 25.41L28.89 30.3C29.28 30.69 29.91 30.69 30.3 30.3C30.69 29.91 30.69 29.28 30.3 28.89L25.41 24L30.3 19.11C30.68 18.73 30.68 18.09 30.3 17.71Z" fill="#8D191D"/>
                                 </svg>
-                                Забронировать столик
+                                <h3>Забронировать столик</h3>
                             </div>
                             <div className="modal__content gap-8">
                                 <div className="input__item input_icon no-drag">
@@ -389,7 +389,7 @@ const InstitutSelect = observer(() => {
                                 <svg className="no-drag" onClick={() => setIsOpenedBookAccess(false)} width="48" height="48" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
                                     <path d="M30.3 17.71C29.91 17.32 29.28 17.32 28.89 17.71L24 22.59L19.11 17.7C18.72 17.31 18.09 17.31 17.7 17.7C17.31 18.09 17.31 18.72 17.7 19.11L22.59 24L17.7 28.89C17.31 29.28 17.31 29.91 17.7 30.3C18.09 30.69 18.72 30.69 19.11 30.3L24 25.41L28.89 30.3C29.28 30.69 29.91 30.69 30.3 30.3C30.69 29.91 30.69 29.28 30.3 28.89L25.41 24L30.3 19.11C30.68 18.73 30.68 18.09 30.3 17.71Z" fill="#8D191D"/>
                                 </svg>
-                                Ваша заявка отправлена
+                                <h3>Ваша заявка отправлена</h3>
                             </div>
                             <div className="modal__content gap-8">
                                 <p>
@@ -415,7 +415,7 @@ const InstitutSelect = observer(() => {
                                 <svg className="no-drag" onClick={() => setIsOpenedFilters(false)} width="48" height="48" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
                                     <path d="M30.3 17.71C29.91 17.32 29.28 17.32 28.89 17.71L24 22.59L19.11 17.7C18.72 17.31 18.09 17.31 17.7 17.7C17.31 18.09 17.31 18.72 17.7 19.11L22.59 24L17.7 28.89C17.31 29.28 17.31 29.91 17.7 30.3C18.09 30.69 18.72 30.69 19.11 30.3L24 25.41L28.89 30.3C29.28 30.69 29.91 30.69 30.3 30.3C30.69 29.91 30.69 29.28 30.3 28.89L25.41 24L30.3 19.11C30.68 18.73 30.68 18.09 30.3 17.71Z" fill="#8D191D"/>
                                 </svg>
-                                Фильтры
+                                <h3>Фильтры</h3>
                             </div>
                             <div className="modal__content gap-16">
                                 <div className="map__filters-list">
@@ -503,7 +503,7 @@ const InstitutSelect = observer(() => {
                 <svg width="48" height="48" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
                     <path d="M31 23.0002H19.83L24.71 18.1202C25.1 17.7302 25.1 17.0902 24.71 16.7002C24.32 16.3102 23.69 16.3102 23.3 16.7002L16.71 23.2902C16.32 23.6802 16.32 24.3102 16.71 24.7002L23.3 31.2902C23.69 31.6802 24.32 31.6802 24.71 31.2902C25.1 30.9002 25.1 30.2702 24.71 29.8802L19.83 25.0002H31C31.55 25.0002 32 24.5502 32 24.0002C32 23.4502 31.55 23.0002 31 23.0002Z" fill="#8D191D"/>
                 </svg>
-                {globals.getCity.title}
+                <h3>{globals.getCity.title}</h3>
             </div>
             <div className="map__map">
                 <YMaps>
