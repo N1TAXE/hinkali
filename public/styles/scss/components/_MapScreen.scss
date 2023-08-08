@@ -1,5 +1,12 @@
 .map {
   position: relative;
+  &__filters {
+    &-list {
+      display: flex;
+      gap: 8px;
+      flex-wrap: wrap;
+    }
+  }
   &__schedule {
     &-list {
       list-style: none;
@@ -64,6 +71,24 @@
   }
 
   &__institute {
+    position: relative;
+    &-close {
+      position: absolute;
+      right: 12px;
+      top: 12px;
+      z-index: 1;
+      display: flex;
+      width: 28px;
+      height: 28px;
+      padding: 4px;
+      justify-content: center;
+      align-items: center;
+      gap: 4px;
+      flex-shrink: 0;
+      border-radius: 24px;
+      background: rgba(0, 0, 0, 0.40);
+      backdrop-filter: blur(2px);
+    }
     &-wrapper {
       z-index: 2;
       position: absolute;

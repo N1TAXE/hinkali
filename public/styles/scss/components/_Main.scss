@@ -4,6 +4,9 @@ html, body {
   overflow-x: hidden;
   font-feature-settings: "lnum";
   font-style: normal;
+  & {
+    font-family: "Tilda Sans";
+  }
 }
 
 body {
@@ -16,6 +19,10 @@ body {
 
 .flex-center {
   align-items: center;
+}
+
+.flex-column {
+  flex-direction: column;
 }
 
 .gap {
