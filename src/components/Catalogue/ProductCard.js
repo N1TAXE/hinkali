@@ -33,10 +33,10 @@ const ProductCard = ({data}) => {
                     </div>
                 </ModalCard>
             }
-            <div onClick={() => setIsModalOpened(true)} className="catalogue-content__cards__card">
+            <div onClick={() => setIsModalOpened(true)} className={`catalogue-content__cards__card ${data.discount ? 'sale' : ''} ${!data.inStock ? 'ended' : ''}`}>
                 <div className="catalogue-content__cards__card-img">
                     <img src={CardPhoto} alt="Вкусно"/>
-                    <div className="catalogue-content__cards__card-sale">-15%</div>
+                    <div className="catalogue-content__cards__card-sale">-{data.discount}%</div>
                     <div className="catalogue-content__cards__card-ended">
                         Упс..
                         <br/>
@@ -45,14 +45,17 @@ const ProductCard = ({data}) => {
                 </div>
                 <div className="catalogue-content__cards__card__content">
                     <div className="catalogue-content__cards__card__content-title">
-                        Хинкали с говядиной
+                        {data.title}
                     </div>
                     <div className="catalogue-content__cards__card__content__info">
                         <div className="catalogue-content__cards__card__content__info-weight">
-                            35 гр
+                            {data.weight} гр
                         </div>
                         <div className="catalogue-content__cards__card__content__info-cost">
-                            45 ₽
+                            {data.oldPrice && (
+                                <span>{data.oldPrice} ₽</span>
+                            )}
+                            {data.price} ₽
                         </div>
                     </div>
                 </div>
