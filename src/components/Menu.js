@@ -1,13 +1,34 @@
-import React from 'react';
+import React, {useEffect, useRef} from 'react';
 import {AUTH_ROUTE, MAIN_ROUTE} from "../utils/consts";
 import {NavLink} from "react-router-dom";
 
 const Menu = ({closeMenu}) => {
+    const menuRef = useRef()
+    useEffect(() => {
+        setTimeout(() => {
+            menuRef.current.classList.add('opened')
+        }, 50)
+    }, [menuRef])
+    const handleClose = () => {
+        menuRef.current.classList.remove('opened')
+        setTimeout(() => {
+            closeMenu(false)
+        }, 300)
+    }
+    const handleWrapperClick = (e) => {
+        if (e.target.classList.contains('menu-wrapper')) {
+            menuRef.current.classList.remove('opened')
+            setTimeout(() => {
+                closeMenu(false)
+            }, 300)
+        }
+
+    }
     return (
-        <div className="menu-wrapper">
-            <div className="menu">
+        <div className="menu-wrapper" onClick={(e) => handleWrapperClick(e)}>
+            <div ref={menuRef} className="menu">
                 <div className="menu-header">
-                    <button onClick={closeMenu}>
+                    <button onClick={handleClose}>
                         <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
                             <path
                                 d="M18.3 5.71022C17.91 5.32022 17.28 5.32022 16.89 5.71022L12 10.5902L7.10997 5.70021C6.71997 5.31021 6.08997 5.31021 5.69997 5.70021C5.30997 6.09021 5.30997 6.72022 5.69997 7.11022L10.59 12.0002L5.69997 16.8902C5.30997 17.2802 5.30997 17.9102 5.69997 18.3002C6.08997 18.6902 6.71997 18.6902 7.10997 18.3002L12 13.4102L16.89 18.3002C17.28 18.6902 17.91 18.6902 18.3 18.3002C18.69 17.9102 18.69 17.2802 18.3 16.8902L13.41 12.0002L18.3 7.11022C18.68 6.73022 18.68 6.09022 18.3 5.71022Z"
@@ -46,8 +67,10 @@ const Menu = ({closeMenu}) => {
                                 d="M4.99995 6C4.71662 6 4.47912 5.90417 4.28745 5.7125C4.09578 5.52083 3.99995 5.28333 3.99995 5C3.99995 4.71667 4.09578 4.47917 4.28745 4.2875C4.47912 4.09583 4.71662 4 4.99995 4H19C19.2833 4 19.5208 4.09583 19.7125 4.2875C19.9041 4.47917 20 4.71667 20 5C20 5.28333 19.9041 5.52083 19.7125 5.7125C19.5208 5.90417 19.2833 6 19 6H4.99995ZM4.99995 20C4.71662 20 4.47912 19.9042 4.28745 19.7125C4.09578 19.5208 3.99995 19.2833 3.99995 19V14H3.82495C3.50828 14 3.24995 13.8792 3.04995 13.6375C2.84995 13.3958 2.78328 13.1167 2.84995 12.8L3.84995 7.8C3.89995 7.56667 4.01662 7.375 4.19995 7.225C4.38328 7.075 4.59162 7 4.82495 7H19.175C19.4083 7 19.6166 7.075 19.8 7.225C19.9833 7.375 20.1 7.56667 20.15 7.8L21.15 12.8C21.2166 13.1167 21.15 13.3958 20.95 13.6375C20.75 13.8792 20.4916 14 20.175 14H20V19C20 19.2833 19.9041 19.5208 19.7125 19.7125C19.5208 19.9042 19.2833 20 19 20C18.7166 20 18.4791 19.9042 18.2875 19.7125C18.0958 19.5208 18 19.2833 18 19V14H14V19C14 19.2833 13.9041 19.5208 13.7125 19.7125C13.5208 19.9042 13.2833 20 13 20H4.99995ZM5.99995 18H12V14H5.99995V18ZM5.04995 12H18.95L18.35 9H5.64995L5.04995 12Z"
                                 fill="#808080"/>
                         </svg>
-                        Симферополь
-                        ул. Турецкая, 25
+                        <span>
+                            Симферополь
+                            <span>ул. Турецкая, 25</span>
+                        </span>
                     </NavLink>
                     <NavLink to={MAIN_ROUTE}>
                         <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">

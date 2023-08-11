@@ -18,8 +18,13 @@
   z-index: 1;
   height: 100%;
   bottom: 0;
-  right: 0;
+  right: -264px;
   padding: 0 0 56px 0;
+  transition: right ease .3s;
+
+  &.opened {
+    right: 0;
+  }
 
   &-header{
     display: flex;
@@ -64,6 +69,20 @@
       line-height: 20px;
       text-decoration: none;
       width: 200px;
+      span {
+        display: flex;
+        flex-direction: column;
+        color: #111;
+        font-size: 16px;
+        font-weight: 400;
+        line-height: 20px;
+        span {
+          color: $c-gray;
+          font-size: 14px;
+          font-weight: 400;
+          line-height: 16px;
+        }
+      }
     }
   }
 

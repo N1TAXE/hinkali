@@ -6,9 +6,6 @@ import {Button} from "react-yandex-maps";
 
 const TabBar = () => {
     const [isMenuOpen, setIsMenuOpen] = useState(false)
-    const closeMenu = () => {
-        setIsMenuOpen(false);
-    }
 
     return (
        <React.Fragment>
@@ -57,7 +54,7 @@ const TabBar = () => {
                </ul>
            </nav>
            {isMenuOpen && (
-               <Menu closeMenu={closeMenu} />
+               <Menu closeMenu={setIsMenuOpen} />
            )}
        </React.Fragment>
     );

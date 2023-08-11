@@ -68,7 +68,7 @@ const Auth = () => {
                                 </div>
                             </div>
                             <div className="auth-content__inputs">
-                                <div className="auth-content__inputs-sms wrong">
+                                <div className="auth-content__inputs-sms validate--error">
                                     {Array.from({length:4},(_,index)=>(
                                         <input type="text" placeholder="*"/>
                                         ))}

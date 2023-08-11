@@ -1644,8 +1644,12 @@ body {
   z-index: 1;
   height: 100%;
   bottom: 0;
-  right: 0;
+  right: -264px;
   padding: 0 0 56px 0;
+  transition: right ease 0.3s;
+}
+.menu.opened {
+  right: 0;
 }
 .menu-header {
   display: flex;
@@ -1687,6 +1691,20 @@ body {
   line-height: 20px;
   text-decoration: none;
   width: 200px;
+}
+.menu-menu a span {
+  display: flex;
+  flex-direction: column;
+  color: #111;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 20px;
+}
+.menu-menu a span span {
+  color: #999;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 16px;
 }
 .menu-social {
   display: flex;
@@ -1783,6 +1801,10 @@ body {
   display: flex;
   justify-content: space-between;
   gap: 8px;
+}
+.auth-content__inputs-sms.validate--error input {
+  border: 1px solid #8D191D;
+  background: #FAE1E2;
 }
 .auth-content__inputs-sms input {
   width: 44px;
