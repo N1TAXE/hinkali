@@ -72,7 +72,6 @@ const Catalogue = () => {
                 <CatalogStories/>
                 <CatalogTabs/>
             </div>
-
             <div className="catalogue-content">
                 <div className="catalogue-content__cards">
                     {products && products.map((item)=>(
@@ -80,7 +79,6 @@ const Catalogue = () => {
                     ))}
                 </div>
             </div>
-
             <TabBar/>
         </div>
     );
