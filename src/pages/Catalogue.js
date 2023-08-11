@@ -171,7 +171,6 @@ const Catalogue = () => {
                     </div>
                 </div>
             </div>
-
             <div className="catalogue-content">
                 <div className="catalogue-content__cards">
                     {Array.from({length:1},(_,index)=>(
@@ -281,7 +280,6 @@ const Catalogue = () => {
                     ))}
                 </div>
             </div>
-
             <TabBar/>
         </div>
     );
