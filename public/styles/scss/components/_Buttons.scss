@@ -113,6 +113,15 @@
       }
     }
   }
+
+  &-icon-none{
+    gap: 4px;
+
+    svg{
+      width: 24px;
+      height: 24px;
+    }
+  }
 }
 
 @include btn("red", $c-red, #fff);

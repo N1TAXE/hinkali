@@ -5,7 +5,7 @@ html, body {
   font-feature-settings: "lnum";
   font-style: normal;
   & {
-    font-family: "Tilda Sans";
+    font-family: "Tilda Sans", sans-serif;
   }
 }
 
@@ -64,10 +64,10 @@ body {
     flex-direction: column;
     overflow: hidden;
     background: #fff;
-    border-radius: 17px 17px 0px 0px;
+    border-radius: 17px 17px 0 0;
   }
   &__bg {
-    z-index: 2;
+    z-index: 3;
     position: fixed;
     top: 0;
     left: 0;

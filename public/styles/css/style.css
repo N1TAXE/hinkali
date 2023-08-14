@@ -190,6 +190,13 @@ table {
 .btn-lg i:before {
   font-size: 16px;
 }
+.btn-icon-none {
+  gap: 4px;
+}
+.btn-icon-none svg {
+  width: 24px;
+  height: 24px;
+}
 
 .btn-red {
   color: #fff;
@@ -265,7 +272,7 @@ html, body {
   font-style: normal;
 }
 html, body {
-  font-family: "Tilda Sans";
+  font-family: "Tilda Sans", sans-serif;
 }
 
 body {
@@ -322,10 +329,10 @@ body {
   flex-direction: column;
   overflow: hidden;
   background: #fff;
-  border-radius: 17px 17px 0px 0px;
+  border-radius: 17px 17px 0 0;
 }
 .modal__bg {
-  z-index: 2;
+  z-index: 3;
   position: fixed;
   top: 0;
   left: 0;
@@ -367,8 +374,10 @@ body {
   position: absolute;
   right: 16px;
 }
-.input__item.input_icon .input__container input {
+.input__item.input_icon_left .input__container input {
   padding-left: 44px;
+}
+.input__item.input_icon_right .input__container input {
   padding-right: 44px;
 }
 .input__item label {
@@ -474,7 +483,7 @@ body {
   flex-shrink: 0;
 }
 .input__counter input {
-  font-family: "Tilda Sans";
+  font-family: "Tilda Sans", sans-serif;
   display: flex;
   max-width: 144px;
   justify-content: space-between;
@@ -490,6 +499,52 @@ body {
   font-style: normal;
   font-weight: 600;
   line-height: 20px; /* 142.857% */
+}
+
+.form-radio {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+.form-radio label {
+  color: #111;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 20px;
+}
+.form-radio__toggle {
+  display: flex;
+  padding: 2px;
+  justify-content: center;
+  align-items: center;
+  border-radius: 14px;
+  background: #F2F2F2;
+}
+.form-radio__toggle__item {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 4px 7px;
+  width: 40px;
+  height: 40px;
+}
+.form-radio__toggle__item svg {
+  width: 24px;
+  height: 24px;
+  fill: #999999;
+}
+.form-radio__toggle__item input[type=radio] {
+  display: none;
+}
+.form-radio__toggle__item input[type=radio]:checked + div {
+  background: #fff;
+  box-shadow: 0 4px 24px 0 rgba(0, 0, 0, 0.12);
+  padding: 7px;
+  border-radius: 12px;
+}
+.form-radio__toggle__item input[type=radio]:checked + div svg {
+  fill: #8D191D;
 }
 
 .filter {
@@ -1494,7 +1549,7 @@ body {
 
 .product__modal-buttons {
   display: flex;
-  width: 360px;
+  width: 100%;
   padding: 8px 16px;
   align-items: center;
   gap: 8px;
@@ -1731,30 +1786,6 @@ body {
   height: 100vh;
   padding: 0 0 56px 0;
 }
-.auth-header {
-  display: flex;
-  padding: 4px;
-  align-items: center;
-  gap: 12px;
-  box-shadow: 0 0 16px 0 rgba(17, 17, 17, 0.4);
-  color: #111;
-  font-size: 18px;
-  font-weight: 700;
-  line-height: 20px;
-}
-.auth-header__icon {
-  display: flex;
-  width: 48px;
-  height: 48px;
-  padding: 4px;
-  justify-content: center;
-  align-items: center;
-}
-.auth-header__icon svg {
-  width: 24px;
-  height: 24px;
-  fill: #8D191D;
-}
 .auth-content {
   display: flex;
   flex-direction: column;
@@ -1886,6 +1917,289 @@ body {
   width: 16px;
   height: 16px;
   fill: #8D191D;
+}
+
+.profile {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  padding: 0 0 56px 0;
+  overflow-y: auto;
+}
+.profile-content {
+  display: flex;
+  flex-direction: column;
+  flex: 1 0 auto;
+  padding: 0 16px;
+}
+.profile-content__info {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  padding: 16px 0;
+}
+.profile-content__info-name {
+  color: #8D191D;
+  font-size: 24px;
+  font-weight: 700;
+  line-height: 28px;
+}
+.profile-content__info-numb {
+  color: #4D4D4D;
+  font-size: 16px;
+  font-weight: 700;
+  line-height: 20px;
+}
+.profile-content__gift {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  padding: 24px;
+  border-radius: 17px;
+  background: #8D191D;
+  box-shadow: 0 4px 24px 0 rgba(0, 0, 0, 0.12);
+}
+.profile-content__gift-header {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 44px;
+  color: #FFF;
+  font-size: 18px;
+  font-weight: 700;
+  line-height: 20px;
+}
+.profile-content__gift-header button {
+  padding: 4px;
+}
+.profile-content__gift-header button svg {
+  width: 24px;
+  height: 24px;
+}
+.profile-content__gift__content {
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  justify-content: center;
+  align-content: center;
+  gap: 8px;
+}
+.profile-content__gift__content-item {
+  width: 40px;
+  height: 40px;
+}
+.profile-content__gift__content-item svg {
+  fill: #731418;
+}
+.profile-content__gift__content-item.active svg {
+  fill: white;
+}
+.profile-content__list {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  padding: 16px 0;
+}
+.profile-content__list-link {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  text-decoration: none;
+  padding: 12px 0;
+  color: #111;
+  font-size: 18px;
+  font-weight: 600;
+  line-height: 20px;
+}
+.profile-content__list-link svg {
+  padding: 0 4px 0 0;
+  width: 24px;
+  height: 24px;
+}
+
+.profile-modal__topbar {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 16px;
+  color: #111;
+  font-size: 18px;
+  font-weight: 700;
+  line-height: 20px;
+}
+.profile-modal__topbar-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.profile-modal__topbar-icon svg {
+  width: 24px;
+  height: 24px;
+}
+.profile-modal__buttons {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  padding: 16px;
+}
+
+.top-bar {
+  display: flex;
+  padding: 4px;
+  align-items: center;
+  gap: 12px;
+  box-shadow: 0 0 16px 0 rgba(17, 17, 17, 0.4);
+  color: #111;
+  font-size: 18px;
+  font-weight: 700;
+  line-height: 20px;
+}
+.top-bar__icon {
+  display: flex;
+  width: 48px;
+  height: 48px;
+  padding: 4px;
+  justify-content: center;
+  align-items: center;
+}
+.top-bar__icon svg {
+  width: 24px;
+  height: 24px;
+  fill: #8D191D;
+}
+
+.personal {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  padding: 0 0 56px 0;
+  overflow-y: auto;
+}
+.personal-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+  padding: 16px;
+  flex: 1 0 auto;
+}
+.personal-content__items {
+  display: flex;
+  gap: 8px;
+  justify-content: center;
+  align-items: center;
+}
+.personal-content label p {
+  color: #333;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 16px;
+}
+.personal-buttons {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  padding: 16px;
+}
+
+.personal-modal__topbar {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 16px;
+  color: #111;
+  font-size: 18px;
+  font-weight: 700;
+  line-height: 20px;
+}
+.personal-modal__topbar-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.personal-modal__topbar-icon svg {
+  width: 24px;
+  height: 24px;
+}
+.personal-modal__buttons {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  padding: 16px;
+}
+
+.delivery-addresses {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  padding: 0 0 56px 0;
+  overflow-y: auto;
+}
+.delivery-addresses__content {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 16px;
+  flex: 1 0 auto;
+  padding: 16px;
+}
+.delivery-addresses__content-sticker {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 16px 0;
+}
+.delivery-addresses__content-sticker img {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 140px;
+  height: 140px;
+}
+.delivery-addresses__content-title {
+  color: #111;
+  text-align: center;
+  font-size: 18px;
+  font-weight: 700;
+  line-height: 20px;
+}
+.delivery-addresses__content-text {
+  color: #4D4D4D;
+  text-align: center;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 20px;
+}
+.delivery-addresses__list {
+  display: flex;
+  flex-direction: column;
+  flex: 1 0 auto;
+}
+.delivery-addresses__list__items {
+  display: flex;
+  flex-direction: column;
+  padding: 16px;
+  gap: 8px;
+}
+.delivery-addresses__list__items-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  color: #111;
+  font-size: 18px;
+  font-weight: 600;
+  line-height: 20px;
+}
+.delivery-addresses__list__items-item button svg {
+  width: 24px;
+  height: 24px;
+  fill: #8D191D;
+}
+.delivery-addresses-buttons {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  padding: 16px;
 }
 
 /*# sourceMappingURL=style.css.map */
