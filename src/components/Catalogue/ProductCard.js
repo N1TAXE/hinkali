@@ -147,6 +147,7 @@ const ProductCard = ({data}) => {
                     </div>
                 </ModalCard>
             }
+
             <div onClick={() => setIsModalOpened(true)} className={`catalogue-content__cards__card ${data.discount ? 'sale' : ''} ${!data.inStock ? 'ended' : ''}`}>
                 <div className="catalogue-content__cards__card-img">
                     <img src={CardPhoto} alt="Вкусно"/>

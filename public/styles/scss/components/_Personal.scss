@@ -37,35 +37,3 @@
     padding: 16px;
   }
 }
-
-.personal-modal{
-  &__topbar{
-    display: flex;
-    align-items: center;
-    gap: 12px;
-    padding: 16px;
-
-    color: #111;
-    font-size: 18px;
-    font-weight: 700;
-    line-height: 20px;
-
-    &-icon{
-      display: flex;
-      align-items: center;
-      justify-content: center;
-
-      svg{
-        width: 24px;
-        height: 24px;
-      }
-    }
-  }
-
-  &__buttons{
-    display: flex;
-    flex-direction: column;
-    gap: 8px;
-    padding: 16px;
-  }
-}

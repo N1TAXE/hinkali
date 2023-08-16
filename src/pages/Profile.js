@@ -2,7 +2,14 @@ import React, {useContext, useState} from 'react';
 import TabBar from "../components/TabBar";
 import TopBar from "../components/TopBar";
 import {NavLink} from "react-router-dom";
-import {AUTH_ROUTE, CATALOGUE_ROUTE, DELIVERYADDRESSES_ROUTE, MAIN_ROUTE, PERSONAL_ROUTE} from "../utils/consts";
+import {
+    AUTH_ROUTE,
+    CATALOGUE_ROUTE,
+    DELIVERYADDRESSES_ROUTE,
+    MAIN_ROUTE,
+    ORDERS_ROUTE,
+    PERSONAL_ROUTE
+} from "../utils/consts";
 import ModalCard from "../components/ModalCard";
 import {observer} from "mobx-react-lite";
 import {Context} from "../index";
@@ -16,15 +23,17 @@ const Profile = observer(() => {
                 <ModalCard setIsOpened={setIsModalOpened}>
                     <div className="modal">
                         <div className="modal__wrapper">
-                            <div className="profile-modal__topbar">
-                                <div className="profile-modal__topbar-icon">
-                                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
-                                        <path d="M19 11.0002H7.82998L12.71 6.12021C13.1 5.73021 13.1 5.09021 12.71 4.70021C12.32 4.31021 11.69 4.31021 11.3 4.70021L4.70998 11.2902C4.31998 11.6802 4.31998 12.3102 4.70998 12.7002L11.3 19.2902C11.69 19.6802 12.32 19.6802 12.71 19.2902C13.1 18.9002 13.1 18.2702 12.71 17.8802L7.82998 13.0002H19C19.55 13.0002 20 12.5502 20 12.0002C20 11.4502 19.55 11.0002 19 11.0002Z" fill="#8D191D"/>
-                                    </svg>
+                            <div className="modal__header justify-between">
+                                <div className="d-flex flex-center justify-between">
+                                    <div onClick={() => setIsModalOpened(false)} className="d-flex flex-center justify-center modal__btn no-drag">
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
+                                            <path d="M19 11.0002H7.82998L12.71 6.12021C13.1 5.73021 13.1 5.09021 12.71 4.70021C12.32 4.31021 11.69 4.31021 11.3 4.70021L4.70998 11.2902C4.31998 11.6802 4.31998 12.3102 4.70998 12.7002L11.3 19.2902C11.69 19.6802 12.32 19.6802 12.71 19.2902C13.1 18.9002 13.1 18.2702 12.71 17.8802L7.82998 13.0002H19C19.55 13.0002 20 12.5502 20 12.0002C20 11.4502 19.55 11.0002 19 11.0002Z" fill="#8D191D"/>
+                                        </svg>
+                                    </div>
+                                    <h3>Выйти из аккаунта?</h3>
                                 </div>
-                                Выйти из аккаунта?
                             </div>
-                            <div className="profile-modal__buttons">
+                            <div className="modal__content gap-8">
                                 <NavLink to={AUTH_ROUTE} onClick={() => globals.setIsAuth(false)} className="btn btn-sm btn-red no-drag">Выйти</NavLink>
                                 <button onClick={() => setIsModalOpened(false)} className="btn btn-sm btn-gray no-drag">Отменить</button>
                             </div>
@@ -79,7 +88,7 @@ const Profile = observer(() => {
                                 <path d="M9.29006 15.88L13.1701 12L9.29006 8.11998C8.90006 7.72998 8.90006 7.09998 9.29006 6.70998C9.68006 6.31998 10.3101 6.31998 10.7001 6.70998L15.2901 11.3C15.6801 11.69 15.6801 12.32 15.2901 12.71L10.7001 17.3C10.3101 17.69 9.68006 17.69 9.29006 17.3C8.91006 16.91 8.90006 16.27 9.29006 15.88Z" fill="#8D191D"/>
                             </svg>
                         </NavLink>
-                        <NavLink to={MAIN_ROUTE} className="profile-content__list-link">
+                        <NavLink to={ORDERS_ROUTE} className="profile-content__list-link">
                             Заказы
                             <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
                                 <path d="M9.29006 15.88L13.1701 12L9.29006 8.11998C8.90006 7.72998 8.90006 7.09998 9.29006 6.70998C9.68006 6.31998 10.3101 6.31998 10.7001 6.70998L15.2901 11.3C15.6801 11.69 15.6801 12.32 15.2901 12.71L10.7001 17.3C10.3101 17.69 9.68006 17.69 9.29006 17.3C8.91006 16.91 8.90006 16.27 9.29006 15.88Z" fill="#8D191D"/>
@@ -87,7 +96,7 @@ const Profile = observer(() => {
                         </NavLink>
                     </div>
                 </div>
-                <button onClick={() => setIsModalOpened(true)} className="btn btn-md btn-none btn-icon-none">
+                <button onClick={() => setIsModalOpened(true)} className="btn btn-md btn-none gap-4">
                     <svg xmlns="http://www.w3.org/2000/svg" width="25" height="24" viewBox="0 0 25 24" fill="none">
                         <path d="M15.825 16.275C15.6417 16.0583 15.55 15.8125 15.55 15.5375C15.55 15.2625 15.6417 15.0333 15.825 14.85L17.675 13H10.5C10.2167 13 9.97917 12.9042 9.7875 12.7125C9.59583 12.5208 9.5 12.2833 9.5 12C9.5 11.7167 9.59583 11.4792 9.7875 11.2875C9.97917 11.0958 10.2167 11 10.5 11H17.675L15.825 9.15C15.625 8.95 15.525 8.7125 15.525 8.4375C15.525 8.1625 15.625 7.925 15.825 7.725C16.0083 7.525 16.2375 7.425 16.5125 7.425C16.7875 7.425 17.0167 7.51667 17.2 7.7L20.8 11.3C20.9 11.4 20.9708 11.5083 21.0125 11.625C21.0542 11.7417 21.075 11.8667 21.075 12C21.075 12.1333 21.0542 12.2583 21.0125 12.375C20.9708 12.4917 20.9 12.6 20.8 12.7L17.2 16.3C16.9833 16.5167 16.7458 16.6125 16.4875 16.5875C16.2292 16.5625 16.0083 16.4583 15.825 16.275ZM5.5 21C4.95 21 4.47917 20.8042 4.0875 20.4125C3.69583 20.0208 3.5 19.55 3.5 19V5C3.5 4.45 3.69583 3.97917 4.0875 3.5875C4.47917 3.19583 4.95 3 5.5 3H11.5C11.7833 3 12.0208 3.09583 12.2125 3.2875C12.4042 3.47917 12.5 3.71667 12.5 4C12.5 4.28333 12.4042 4.52083 12.2125 4.7125C12.0208 4.90417 11.7833 5 11.5 5H5.5V19H11.5C11.7833 19 12.0208 19.0958 12.2125 19.2875C12.4042 19.4792 12.5 19.7167 12.5 20C12.5 20.2833 12.4042 20.5208 12.2125 20.7125C12.0208 20.9042 11.7833 21 11.5 21H5.5Z" fill="#8D191D"/>
                     </svg>

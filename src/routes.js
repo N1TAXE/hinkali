@@ -1,7 +1,7 @@
 import {
     AUTH_ROUTE,
     CATALOGUE_ROUTE, DELIVERYADDRESSES_ROUTE,
-    MAIN_ROUTE, PERSONAL_ROUTE, PROFILE_ROUTE,
+    MAIN_ROUTE, ORDERS_ROUTE, PERSONAL_ROUTE, PROFILE_ROUTE,
 } from "./utils/consts";
 import MainPage from "./pages/MainPage";
 import Catalogue from "./pages/Catalogue";
@@ -9,6 +9,7 @@ import Auth from "./pages/Auth";
 import Profile from "./pages/Profile";
 import Personal from "./pages/Personal";
 import DeliveryAddresses from "./pages/DeliveryAddresses";
+import Orders from "./pages/Orders";
 
 export const publicRoutes = [
     {
@@ -39,5 +40,10 @@ export const publicRoutes = [
     {
         path: DELIVERYADDRESSES_ROUTE,
         Component: DeliveryAddresses
+    },
+
+    {
+        path: ORDERS_ROUTE,
+        Component: Orders
     }
 ]

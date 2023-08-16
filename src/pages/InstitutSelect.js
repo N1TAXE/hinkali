@@ -309,7 +309,7 @@ const InstitutSelect = observer(() => {
                                 <h3>Забронировать столик</h3>
                             </div>
                             <div className="modal__content gap-8">
-                                <div className="input__item input_icon no-drag">
+                                <div className="input__item input_icon no-drag input_icon_left">
                                     <label htmlFor="address">Заведение</label>
                                     <div className="input__container">
                                         <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
