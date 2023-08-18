@@ -1,15 +1,31 @@
-.validate-error{
+.validate{
   display: flex;
+  align-items: center;
   gap: 4px;
+  white-space: nowrap;
 
-  color: #8D191D;
   font-size: 12px;
   font-weight: 400;
   line-height: 16px;
 
+  &-error{
+    color: #8D191D;
+
+    svg{
+      fill: #8D191D;
+    }
+  }
+
+  &-additional{
+    color: #4D4D4D;
+
+    svg{
+      fill: #4D4D4D;
+    }
+  }
+
   svg{
     width: 16px;
     height: 16px;
-    fill: #8D191D;
   }
 }

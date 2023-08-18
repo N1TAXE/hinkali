@@ -123,6 +123,16 @@
     font-weight: 600;
     line-height: 20px;
   }
+
+  &-none-defualt{
+    padding: 4px;
+    gap: 4px;
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 20px;
+    height: 44px;
+  }
 }
 
 @include btn("red", $c-red, #fff);

@@ -3,11 +3,10 @@ import TopBar from "../components/TopBar";
 import TabBar from "../components/TabBar";
 import {observer} from "mobx-react-lite";
 import {Context} from "../index";
-import no_addresses from "../assets/images/delivery/no_addresses.png"
 import {NavLink} from "react-router-dom";
 import {PROFILE_ROUTE} from "../utils/consts";
 import ModalCard from "../components/ModalCard";
-import Unauthorized from "../components/Unauthorized";
+import UnAuthorized from "../components/UnAuthorized";
 
 const DeliveryAddresses = observer(() => {
     const {globals} = useContext(Context)
@@ -21,29 +20,7 @@ const DeliveryAddresses = observer(() => {
         switch (deliveryAddresses){
             case 'empty':
                 return(
-                    <React.Fragment>
-                        <div className="authorized__content">
-                            <div className="authorized__content-sticker">
-                                <img src={no_addresses} alt="Грустный хинкалик"/>
-                            </div>
-                            <div className="authorized__content-title">Нет адресов</div>
-                            <div className="authorized__content-text">
-                                Добавьте адрес доставки для быстрого оформления ваших заказов
-                            </div>
-                        </div>
-                        <div className="authorized__buttons">
-                            <button onClick={() => setIsModalOpened(true)} className="btn btn-md btn-red gap-4">
-                                <svg xmlns="http://www.w3.org/2000/svg" width="25" height="24" viewBox="0 0 25 24" fill="none">
-                                    <path d="M18.5 13H13.5V18C13.5 18.55 13.05 19 12.5 19C11.95 19 11.5 18.55 11.5 18V13H6.5C5.95 13 5.5 12.55 5.5 12C5.5 11.45 5.95 11 6.5 11H11.5V6C11.5 5.45 11.95 5 12.5 5C13.05 5 13.5 5.45 13.5 6V11H18.5C19.05 11 19.5 11.45 19.5 12C19.5 12.55 19.05 13 18.5 13Z" fill="white"/>
-                                </svg>
-                                Добавить адрес
-                            </button>
-                            <button onClick={() => setDeliveryAddresses('have')} className="btn btn-md btn-red gap-4">
-                                Тестовый список
-                            </button>
-                            <NavLink to={PROFILE_ROUTE} className="btn btn-md btn-gray">Назад</NavLink>
-                        </div>
-                    </React.Fragment>
+                    <UnAuthorized page={'deliveryAddresses'} setStatus={setDeliveryAddresses} choiceButton={'deliveryAddresses'}/>
                 )
             case 'have':
                 return (
@@ -63,8 +40,11 @@ const DeliveryAddresses = observer(() => {
                             </div>
                         </div>
                         <div className="delivery-addresses__buttons">
-                            <button onClick={() => setIsModalOpened(true)} className="btn btn-md btn-red">
-                                + Добавить новый адрес
+                            <button onClick={() => setIsModalOpened(true)} className="btn btn-md btn-red gap-4">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="25" height="24" viewBox="0 0 25 24" fill="none">
+                                    <path d="M18.5 13H13.5V18C13.5 18.55 13.05 19 12.5 19C11.95 19 11.5 18.55 11.5 18V13H6.5C5.95 13 5.5 12.55 5.5 12C5.5 11.45 5.95 11 6.5 11H11.5V6C11.5 5.45 11.95 5 12.5 5C13.05 5 13.5 5.45 13.5 6V11H18.5C19.05 11 19.5 11.45 19.5 12C19.5 12.55 19.05 13 18.5 13Z" fill="white"/>
+                                </svg>
+                                Добавить новый адрес
                             </button>
                             <NavLink to={PROFILE_ROUTE} className="btn btn-md btn-gray">Назад</NavLink>
                         </div>
@@ -255,10 +235,10 @@ const DeliveryAddresses = observer(() => {
                 </ModalCard>
             }
 
-            <div className="delivery-addresses unauthorized">
+            <div className={!globals.getIsAuth ? ("unauthorized"):("delivery-addresses authorized")}>
                 <TopBar title="Адреса доставки" icon={<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"><path d="M12 12C12.55 12 13.0208 11.8042 13.4125 11.4125C13.8042 11.0208 14 10.55 14 10C14 9.45 13.8042 8.97917 13.4125 8.5875C13.0208 8.19583 12.55 8 12 8C11.45 8 10.9792 8.19583 10.5875 8.5875C10.1958 8.97917 10 9.45 10 10C10 10.55 10.1958 11.0208 10.5875 11.4125C10.9792 11.8042 11.45 12 12 12ZM12 21.625C11.8667 21.625 11.7333 21.6 11.6 21.55C11.4667 21.5 11.35 21.4333 11.25 21.35C8.81667 19.2 7 17.2042 5.8 15.3625C4.6 13.5208 4 11.8 4 10.2C4 7.7 4.80417 5.70833 6.4125 4.225C8.02083 2.74167 9.88333 2 12 2C14.1167 2 15.9792 2.74167 17.5875 4.225C19.1958 5.70833 20 7.7 20 10.2C20 11.8 19.4 13.5208 18.2 15.3625C17 17.2042 15.1833 19.2 12.75 21.35C12.65 21.4333 12.5333 21.5 12.4 21.55C12.2667 21.6 12.1333 21.625 12 21.625Z" fill="#8D191D"/></svg>}/>
                 {!globals.getIsAuth ? (
-                    <Unauthorized/>
+                    <UnAuthorized page={'deliveryAddresses'}/>
                 ):(
                     <React.Fragment>
                         {getDeliveryAddresses()}
