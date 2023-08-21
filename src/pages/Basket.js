@@ -10,7 +10,7 @@ import ModalCard from "../components/ModalCard";
 
 const Basket = observer(() => {
     const {globals} = useContext(Context)
-    const [basket, setBasket] = useState('have')
+    const [basket, setBasket] = useState('empty')
     const [isModalDeleteOpened, setIsModalDeleteOpened] = useState(false)
     const [isWare, setIsWare] = useState(false)
     const [dozen, setDozen] = useState('discount')
@@ -326,10 +326,7 @@ const Basket = observer(() => {
             <div className={`${!globals.getIsAuth ? "unauthorized" : "authorized"} ${basket === 'have' ? 'basket' : ''}`}>
                 <TopBar page={`${basket === 'have' ? 'basket' : 'any'}`} title="Корзина" icon={<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"><path d="M4.99984 21C4.71651 21 4.45818 20.9125 4.22484 20.7375C3.99151 20.5625 3.83318 20.3333 3.74984 20.05L0.949842 9.95C0.866508 9.71667 0.904008 9.5 1.06234 9.3C1.22068 9.1 1.43318 9 1.69984 9H6.74984L11.1498 2.45C11.2332 2.31667 11.3498 2.20833 11.4998 2.125C11.6498 2.04167 11.8082 2 11.9748 2C12.1415 2 12.2998 2.04167 12.4498 2.125C12.5998 2.20833 12.7165 2.31667 12.7998 2.45L17.1998 9H22.2998C22.5665 9 22.779 9.1 22.9373 9.3C23.0957 9.5 23.1332 9.71667 23.0498 9.95L20.2498 20.05C20.1665 20.3333 20.0082 20.5625 19.7748 20.7375C19.5415 20.9125 19.2832 21 18.9998 21H4.99984ZM11.9998 17C12.5498 17 13.0207 16.8042 13.4123 16.4125C13.804 16.0208 13.9998 15.55 13.9998 15C13.9998 14.45 13.804 13.9792 13.4123 13.5875C13.0207 13.1958 12.5498 13 11.9998 13C11.4498 13 10.979 13.1958 10.5873 13.5875C10.1957 13.9792 9.99984 14.45 9.99984 15C9.99984 15.55 10.1957 16.0208 10.5873 16.4125C10.979 16.8042 11.4498 17 11.9998 17ZM9.17484 9H14.7998L11.9748 4.8L9.17484 9Z" fill="#8D191D"/></svg>}/>
                 {!globals.getIsAuth ? (
-                    // <UnAuthorized page={'basket'}/>
-                    <React.Fragment>
-                        {getBasket()}
-                    </React.Fragment>
+                    <UnAuthorized page={'basket'}/>
                 ):(
                     <React.Fragment>
                         {getBasket()}
