@@ -604,7 +604,6 @@ body {
   height: 24px;
   background-color: #F2F2F2;
   border-radius: 50%;
-  z-index: 1;
 }
 .input__switch-bg {
   position: absolute;
@@ -615,6 +614,7 @@ body {
   border-radius: 16px;
   background: #ccc;
   transition: background-color ease 0.3s;
+  z-index: -1;
 }
 .input__switch input[type=checkbox] {
   position: absolute;

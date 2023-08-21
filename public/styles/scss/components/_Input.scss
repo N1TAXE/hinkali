@@ -250,7 +250,6 @@
     height: 24px;
     background-color: #F2F2F2;
     border-radius: 50%;
-    z-index: 1;
   }
   &-bg {
     position: absolute;
@@ -261,6 +260,7 @@
     border-radius: 16px;
     background: #ccc;
     transition: background-color ease .3s;
+    z-index: -1;
   }
 
   input[type=checkbox]{
