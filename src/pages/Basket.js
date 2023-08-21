@@ -7,6 +7,9 @@ import UnAuthorized from "../components/UnAuthorized";
 import CardPhoto from "../assets/images/cards/Photo.png";
 import ProductCard from "../components/Catalogue/ProductCard";
 import ModalCard from "../components/ModalCard";
+import {NavLink} from "react-router-dom";
+import {MAIN_ROUTE, ORDERPLACEMENT_ROUTE} from "../utils/consts";
+import Authorized from "../components/Authorized";
 
 const Basket = observer(() => {
     const {globals} = useContext(Context)
@@ -136,7 +139,9 @@ const Basket = observer(() => {
         switch (basket) {
             case 'empty':
                 return(
-                    <UnAuthorized page={'basket'} setStatus={setBasket}/>
+                    <React.Fragment>
+                        {!globals.getIsAuth ? <UnAuthorized page={'basket'} setStatus={setBasket}/> : <Authorized page={'basket'} setStatus={setBasket}/>}
+                    </React.Fragment>
                 )
             case 'have':
                 return (
@@ -242,9 +247,7 @@ const Basket = observer(() => {
                                 </div>
                             </div>
 
-                            {/**/}
                             {getDozen()}
-                            {/**/}
 
                             <div className="basket__content__price">
                                 <div className="basket__content__price__item">
@@ -282,9 +285,9 @@ const Basket = observer(() => {
                                     </div>
                                 </div>
                             </div>
-                            <button className="btn btn-md btn-red">
+                            <NavLink to={ORDERPLACEMENT_ROUTE} className="btn btn-md btn-red">
                                 Оформить
-                            </button>
+                            </NavLink>
                         </div>
                     </React.Fragment>
                 )

@@ -7,6 +7,7 @@ import {NavLink} from "react-router-dom";
 import {PROFILE_ROUTE} from "../utils/consts";
 import ModalCard from "../components/ModalCard";
 import UnAuthorized from "../components/UnAuthorized";
+import Authorized from "../components/Authorized";
 
 const DeliveryAddresses = observer(() => {
     const {globals} = useContext(Context)
@@ -20,7 +21,9 @@ const DeliveryAddresses = observer(() => {
         switch (deliveryAddresses){
             case 'empty':
                 return(
-                    <UnAuthorized page={'deliveryAddresses'} setStatus={setDeliveryAddresses} choiceButton={'deliveryAddresses'}/>
+                    <React.Fragment>
+                        {!globals.getIsAuth ? <UnAuthorized page={'deliveryAddresses'} setStatus={setDeliveryAddresses}/> : <Authorized page={'deliveryAddresses'} setStatus={setDeliveryAddresses}/>}
+                    </React.Fragment>
                 )
             case 'have':
                 return (

@@ -1,7 +1,7 @@
 import {
     AUTH_ROUTE, BASKET_ROUTE,
     CATALOGUE_ROUTE, DELIVERYADDRESSES_ROUTE,
-    MAIN_ROUTE, ORDERS_ROUTE, PERSONAL_ROUTE, PROFILE_ROUTE,
+    MAIN_ROUTE, ORDERPLACEMENT_ROUTE, ORDERS_ROUTE, PERSONAL_ROUTE, PROFILE_ROUTE,
 } from "./utils/consts";
 import MainPage from "./pages/MainPage";
 import Catalogue from "./pages/Catalogue";
@@ -11,6 +11,7 @@ import Personal from "./pages/Personal";
 import DeliveryAddresses from "./pages/DeliveryAddresses";
 import Orders from "./pages/Orders";
 import Basket from "./pages/Basket";
+import Orderplacement from "./pages/OrderPlacement";
 
 export const publicRoutes = [
     {
@@ -51,5 +52,9 @@ export const publicRoutes = [
     {
         path: BASKET_ROUTE,
         Component: Basket
+    },
+    {
+        path: ORDERPLACEMENT_ROUTE,
+        Component: Orderplacement
     },
 ]

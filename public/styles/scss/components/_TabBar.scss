@@ -66,14 +66,42 @@
       }
     }
 
+    &.value{
+      .tab-bar__img-value{
+        display: flex;
+        padding: 4px;
+        justify-content: center;
+        align-items: center;
+        position: absolute;
+        top: -3px;
+        right: -17.5px;
+
+        border-radius: 12px;
+        border: #FFF;
+        background: #FDCB3D;
+
+        color: #111;
+        text-align: center;
+        font-size: 10px;
+        font-weight: 600;
+        line-height: 10px;
+        white-space: nowrap;
+      }
+    }
+
   }
 
   &__img{
     width: 24px;
     height: 24px;
+    position: relative;
 
     svg{
       fill: #808080;
+    }
+
+    &-value{
+      display: none;
     }
   }
 }

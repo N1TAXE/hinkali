@@ -1025,12 +1025,34 @@ body {
 .tab-bar__link.active .tab-bar__img-profile path {
   d: path("M12 12C10.9 12 9.95833 11.6083 9.175 10.825C8.39167 10.0417 8 9.1 8 8C8 6.9 8.39167 5.95833 9.175 5.175C9.95833 4.39167 10.9 4 12 4C13.1 4 14.0417 4.39167 14.825 5.175C15.6083 5.95833 16 6.9 16 8C16 9.1 15.6083 10.0417 14.825 10.825C14.0417 11.6083 13.1 12 12 12ZM6 20C5.45 20 4.97917 19.8042 4.5875 19.4125C4.19583 19.0208 4 18.55 4 18V17.2C4 16.6333 4.14583 16.1125 4.4375 15.6375C4.72917 15.1625 5.11667 14.8 5.6 14.55C6.63333 14.0333 7.68333 13.6458 8.75 13.3875C9.81667 13.1292 10.9 13 12 13C13.1 13 14.1833 13.1292 15.25 13.3875C16.3167 13.6458 17.3667 14.0333 18.4 14.55C18.8833 14.8 19.2708 15.1625 19.5625 15.6375C19.8542 16.1125 20 16.6333 20 17.2V18C20 18.55 19.8042 19.0208 19.4125 19.4125C19.0208 19.8042 18.55 20 18 20H6Z");
 }
+.tab-bar__link.value .tab-bar__img-value {
+  display: flex;
+  padding: 4px;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  top: -3px;
+  right: -17.5px;
+  border-radius: 12px;
+  border: #FFF;
+  background: #FDCB3D;
+  color: #111;
+  text-align: center;
+  font-size: 10px;
+  font-weight: 600;
+  line-height: 10px;
+  white-space: nowrap;
+}
 .tab-bar__img {
   width: 24px;
   height: 24px;
+  position: relative;
 }
 .tab-bar__img svg {
   fill: #808080;
+}
+.tab-bar__img-value {
+  display: none;
 }
 
 .select__search {
@@ -1522,6 +1544,7 @@ body {
   display: flex;
   align-self: center;
   justify-content: center;
+  width: 100%;
 }
 .product__modal-discount {
   display: flex;
@@ -2254,6 +2277,11 @@ body {
   width: 48px;
   height: 48px;
   padding: 4px;
+  justify-content: center;
+  align-items: center;
+}
+.top-bar__icon a {
+  display: flex;
   justify-content: center;
   align-items: center;
 }
@@ -3068,6 +3096,378 @@ body {
   color: #111;
 }
 .basket__content__product_card__info__price-cost span:after, .basket__content__price__item-cost span:after, .basket__more__content__product_card__info__price-cost span:after, .basket__buttons__total__price-cost span:after {
+  position: absolute;
+  content: "";
+  left: 0;
+  top: 50%;
+  transform: rotate(-15deg) translateX(5%);
+  width: 100%;
+  height: 2px;
+  background: #8D191D;
+}
+
+.order-placement-remained {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  flex: 1 1 0;
+}
+.order-placement-remained__content {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  flex: 1 0 auto;
+  gap: 16px;
+  padding: 16px;
+}
+.order-placement-remained__content__info {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 16px;
+}
+.order-placement-remained__content__info-title {
+  text-align: center;
+}
+.order-placement-remained__content__info-addition {
+  color: #4D4D4D;
+  text-align: center;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 20px;
+}
+.order-placement-remained__content__list, .order-placement-remained__content .order-placement__check__info__list {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  padding: 16px;
+  width: 100%;
+  border-radius: 17px;
+  background: #FFF;
+  box-shadow: 0 4px 24px 0 rgba(0, 0, 0, 0.12);
+}
+.order-placement-remained__content__list__item, .order-placement-remained__content__list .order-placement__check__info__list__item, .order-placement-remained__content .order-placement__check__info__list__item, .order-placement-remained__content .order-placement__check__info__list .order-placement__check__info__list__item {
+  display: flex;
+  flex-direction: column;
+}
+.order-placement-remained__content__list__item__info, .order-placement-remained__content__list__item .order-placement__check__info__list__item__info, .order-placement-remained__content__list .order-placement__check__info__list__item__info, .order-placement-remained__content__list .order-placement__check__info__list__item .order-placement__check__info__list__item__info, .order-placement-remained__content .order-placement__check__info__list__item__info, .order-placement-remained__content .order-placement__check__info__list__item .order-placement__check__info__list__item__info, .order-placement-remained__content .order-placement__check__info__list .order-placement__check__info__list__item__info, .order-placement-remained__content .order-placement__check__info__list .order-placement__check__info__list__item .order-placement__check__info__list__item__info {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.order-placement-remained__content__list__item__info-title, .order-placement-remained__content__list__item__info .order-placement__check__info__list__item__info-title, .order-placement-remained__content__list__item .order-placement__check__info__list__item__info-title, .order-placement-remained__content__list__item .order-placement__check__info__list__item__info .order-placement__check__info__list__item__info-title, .order-placement-remained__content__list .order-placement__check__info__list__item__info-title, .order-placement-remained__content__list .order-placement__check__info__list__item__info .order-placement__check__info__list__item__info-title, .order-placement-remained__content__list .order-placement__check__info__list__item .order-placement__check__info__list__item__info-title, .order-placement-remained__content__list .order-placement__check__info__list__item .order-placement__check__info__list__item__info .order-placement__check__info__list__item__info-title, .order-placement-remained__content .order-placement__check__info__list__item__info-title, .order-placement-remained__content .order-placement__check__info__list__item__info .order-placement__check__info__list__item__info-title, .order-placement-remained__content .order-placement__check__info__list__item .order-placement__check__info__list__item__info-title, .order-placement-remained__content .order-placement__check__info__list__item .order-placement__check__info__list__item__info .order-placement__check__info__list__item__info-title, .order-placement-remained__content .order-placement__check__info__list .order-placement__check__info__list__item__info-title, .order-placement-remained__content .order-placement__check__info__list .order-placement__check__info__list__item__info .order-placement__check__info__list__item__info-title, .order-placement-remained__content .order-placement__check__info__list .order-placement__check__info__list__item .order-placement__check__info__list__item__info-title, .order-placement-remained__content .order-placement__check__info__list .order-placement__check__info__list__item .order-placement__check__info__list__item__info .order-placement__check__info__list__item__info-title {
+  max-width: 180px;
+  overflow: hidden;
+  color: #111;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 16px;
+}
+.order-placement-remained__content__list__item__info-cost, .order-placement-remained__content__list__item__info .order-placement__check__info__list__item__info-cost, .order-placement-remained__content__list__item .order-placement__check__info__list__item__info-cost, .order-placement-remained__content__list__item .order-placement__check__info__list__item__info .order-placement__check__info__list__item__info-cost, .order-placement-remained__content__list .order-placement__check__info__list__item__info-cost, .order-placement-remained__content__list .order-placement__check__info__list__item__info .order-placement__check__info__list__item__info-cost, .order-placement-remained__content__list .order-placement__check__info__list__item .order-placement__check__info__list__item__info-cost, .order-placement-remained__content__list .order-placement__check__info__list__item .order-placement__check__info__list__item__info .order-placement__check__info__list__item__info-cost, .order-placement-remained__content .order-placement__check__info__list__item__info-cost, .order-placement-remained__content .order-placement__check__info__list__item__info .order-placement__check__info__list__item__info-cost, .order-placement-remained__content .order-placement__check__info__list__item .order-placement__check__info__list__item__info-cost, .order-placement-remained__content .order-placement__check__info__list__item .order-placement__check__info__list__item__info .order-placement__check__info__list__item__info-cost, .order-placement-remained__content .order-placement__check__info__list .order-placement__check__info__list__item__info-cost, .order-placement-remained__content .order-placement__check__info__list .order-placement__check__info__list__item__info .order-placement__check__info__list__item__info-cost, .order-placement-remained__content .order-placement__check__info__list .order-placement__check__info__list__item .order-placement__check__info__list__item__info-cost, .order-placement-remained__content .order-placement__check__info__list .order-placement__check__info__list__item .order-placement__check__info__list__item__info .order-placement__check__info__list__item__info-cost {
+  font-size: 14px;
+  font-weight: 700;
+  line-height: 16px;
+}
+.order-placement-remained__content__list__item__info-cost span, .order-placement-remained__content__list__item__info .order-placement__check__info__list__item__info-cost span, .order-placement-remained__content__list__item .order-placement__check__info__list__item__info-cost span, .order-placement-remained__content__list__item .order-placement__check__info__list__item__info .order-placement__check__info__list__item__info-cost span, .order-placement-remained__content__list .order-placement__check__info__list__item__info-cost span, .order-placement-remained__content__list .order-placement__check__info__list__item__info .order-placement__check__info__list__item__info-cost span, .order-placement-remained__content__list .order-placement__check__info__list__item .order-placement__check__info__list__item__info-cost span, .order-placement-remained__content__list .order-placement__check__info__list__item .order-placement__check__info__list__item__info .order-placement__check__info__list__item__info-cost span, .order-placement-remained__content .order-placement__check__info__list__item__info-cost span, .order-placement-remained__content .order-placement__check__info__list__item__info .order-placement__check__info__list__item__info-cost span, .order-placement-remained__content .order-placement__check__info__list__item .order-placement__check__info__list__item__info-cost span, .order-placement-remained__content .order-placement__check__info__list__item .order-placement__check__info__list__item__info .order-placement__check__info__list__item__info-cost span, .order-placement-remained__content .order-placement__check__info__list .order-placement__check__info__list__item__info-cost span, .order-placement-remained__content .order-placement__check__info__list .order-placement__check__info__list__item__info .order-placement__check__info__list__item__info-cost span, .order-placement-remained__content .order-placement__check__info__list .order-placement__check__info__list__item .order-placement__check__info__list__item__info-cost span, .order-placement-remained__content .order-placement__check__info__list .order-placement__check__info__list__item .order-placement__check__info__list__item__info .order-placement__check__info__list__item__info-cost span {
+  font-size: 12px;
+  font-weight: 500;
+  line-height: 16px;
+}
+.order-placement-remained__content__list__item-price, .order-placement-remained__content__list__item .order-placement__check__info__list__item-price, .order-placement-remained__content__list .order-placement__check__info__list__item-price, .order-placement-remained__content__list .order-placement__check__info__list__item .order-placement__check__info__list__item-price, .order-placement-remained__content .order-placement__check__info__list__item-price, .order-placement-remained__content .order-placement__check__info__list__item .order-placement__check__info__list__item-price, .order-placement-remained__content .order-placement__check__info__list .order-placement__check__info__list__item-price, .order-placement-remained__content .order-placement__check__info__list .order-placement__check__info__list__item .order-placement__check__info__list__item-price {
+  color: #808080;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 16px;
+}
+.order-placement-remained__buttons {
+  display: flex;
+  flex-direction: column;
+  padding: 16px;
+  gap: 8px;
+}
+
+.order-placement__tabs {
+  display: flex;
+  flex-direction: column;
+  padding: 16px 16px 8px;
+}
+.order-placement__tabs .form-radio label {
+  color: #111;
+  font-size: 24px;
+  font-weight: 700;
+  line-height: 28px;
+}
+.order-placement__tabs .form-radio__toggle {
+  padding: unset;
+}
+.order-placement__tabs .form-radio__toggle__item {
+  width: unset;
+  flex: 1 1 0;
+  padding: 2px;
+  align-items: unset;
+}
+.order-placement__tabs .form-radio__toggle__item-tab {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #999999;
+  font-family: Tilda Sans, sans-serif;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 20px;
+}
+.order-placement__tabs .form-radio__toggle__item input[type=radio]:checked + div {
+  color: #8D191D;
+  font-weight: 700;
+  flex: 1 1 0;
+}
+.order-placement__form {
+  display: flex;
+  flex-direction: column;
+  padding: 8px 16px;
+  gap: 16px;
+}
+.order-placement__form .input__item .input__container input[placeholder] {
+  text-overflow: ellipsis;
+}
+.order-placement__payment-method {
+  display: flex;
+  flex-direction: column;
+  padding: 8px 16px;
+}
+.order-placement__payment-method-title {
+  display: flex;
+  padding: 8px 0;
+}
+.order-placement__payment-method__item {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 8px;
+}
+.order-placement__payment-method__item-name {
+  color: #8D191D;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 24px;
+  flex: 1 1 0;
+}
+.order-placement__payment-method__item svg {
+  width: 24px;
+  height: 24px;
+}
+.order-placement__payment-method__item-btn {
+  display: flex;
+  padding: 8px;
+}
+.order-placement__payment-method__item-btn svg {
+  width: 24px;
+  height: 24px;
+}
+.order-placement__payment-method__item-btn input[type=radio] {
+  display: none;
+}
+.order-placement__payment-method__item-btn input[type=radio]:checked + svg path {
+  d: path("M12 2C6.48 2 2 6.48 2 12C2 17.52 6.48 22 12 22C17.52 22 22 17.52 22 12C22 6.48 17.52 2 12 2ZM12 20C7.58 20 4 16.42 4 12C4 7.58 7.58 4 12 4C16.42 4 20 7.58 20 12C20 16.42 16.42 20 12 20ZM12 17C14.7614 17 17 14.7614 17 12C17 9.23858 14.7614 7 12 7C9.23858 7 7 9.23858 7 12C7 14.7614 9.23858 17 12 17Z");
+  fill: #8D191D;
+}
+.order-placement__payment-method .input__item .input__container {
+  position: relative;
+}
+.order-placement__payment-method .input__item .input__container button {
+  position: absolute;
+  top: 6px;
+  right: 5px;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 24px;
+}
+.order-placement__check {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  padding: 8px 16px;
+}
+.order-placement__check__info {
+  display: flex;
+  flex-direction: column;
+  padding: 16px;
+  border-radius: 17px;
+  background: #FFF;
+  box-shadow: 0 4px 24px 0 rgba(0, 0, 0, 0.12);
+}
+.order-placement__check__info-title {
+  padding: 8px 0;
+}
+.order-placement__check__info__list {
+  border-radius: unset;
+  padding: 8px 0;
+  box-shadow: unset;
+}
+.order-placement__check__info__price {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 8px 0;
+}
+.order-placement__check__info__price-cost {
+  color: #8D191D;
+  font-size: 18px;
+  font-weight: 700;
+  line-height: 20px;
+}
+.order-placement__check__info__price-cost span {
+  color: #111;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 16px;
+}
+.order-placement__check__info__delivery {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  padding: 8px 0;
+}
+.order-placement__check__info__delivery__price {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.order-placement__check__info__delivery__price-cost {
+  color: #8D191D;
+  font-size: 18px;
+  font-weight: 700;
+  line-height: 20px;
+}
+.order-placement__check__info__delivery__price-cost span {
+  color: #111;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 16px;
+}
+.order-placement__check__info__delivery__info {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+.order-placement__check__info__delivery__info-time {
+  color: #111;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 20px;
+}
+.order-placement__check__info__delivery__info-contact {
+  color: #111;
+  font-size: 14px;
+  font-weight: 700;
+  line-height: 16px;
+}
+.order-placement__check__info__delivery__info-addresses {
+  color: #111;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 16px;
+}
+.order-placement__check__info__delivery__info-additional {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  color: #558950;
+  font-size: 12px;
+  font-weight: 400;
+  line-height: 16px;
+}
+.order-placement__check__info__delivery__info-additional span {
+  color: #558950;
+  font-size: 14px;
+  font-weight: 700;
+  line-height: 16px;
+}
+.order-placement__check__info__delivery__info-additional svg {
+  width: 16px;
+  height: 16px;
+}
+.order-placement__check__info__total {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 16px 0;
+}
+.order-placement__check__info__total-cost {
+  color: #8D191D;
+  font-size: 24px;
+  font-weight: 700;
+  line-height: 28px;
+}
+.order-placement__check__info__total-cost span {
+  color: #111;
+  font-size: 18px;
+  font-weight: 400;
+  line-height: 24px;
+}
+.order-placement__check__info__payment {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  padding: 16px 0;
+}
+.order-placement__check__info__payment__info {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+.order-placement__check__info__payment__info__item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.order-placement__check__info__payment__info__item-name {
+  color: #111;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 20px;
+}
+.order-placement__check__info__payment__info__item-cost {
+  color: #8D191D;
+  font-size: 14px;
+  font-weight: 700;
+  line-height: 16px;
+}
+.order-placement__buttons {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  padding: 16px;
+}
+.order-placement__buttons-link {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-decoration: none;
+  padding: 6px 0;
+  color: #808080;
+  text-align: center;
+  font-size: 12px;
+  font-weight: 400;
+  line-height: 16px;
+}
+
+.order-placement__check__info__total-cost, .order-placement__check__info__delivery__price-cost, .order-placement__check__info__price-cost, .order-placement-remained__content__list__item__info-cost, .order-placement__check__info__list__item__info-cost {
+  display: flex;
+  align-self: center;
+  align-items: center;
+  gap: 4px;
+  color: #8D191D;
+}
+.order-placement__check__info__total-cost span, .order-placement__check__info__delivery__price-cost span, .order-placement__check__info__price-cost span, .order-placement-remained__content__list__item__info-cost span, .order-placement__check__info__list__item__info-cost span {
+  position: relative;
+  color: #111;
+}
+.order-placement__check__info__total-cost span:after, .order-placement__check__info__delivery__price-cost span:after, .order-placement__check__info__price-cost span:after, .order-placement-remained__content__list__item__info-cost span:after, .order-placement__check__info__list__item__info-cost span:after {
   position: absolute;
   content: "";
   left: 0;

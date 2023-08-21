@@ -7,6 +7,7 @@ import UnAuthorized from "../components/UnAuthorized";
 import {NavLink} from "react-router-dom";
 import {PROFILE_ROUTE} from "../utils/consts";
 import OrdersCard from "../components/Orders/OrdersCard";
+import Authorized from "../components/Authorized";
 
 const Orders = observer(() => {
     const {globals} = useContext(Context)
@@ -138,7 +139,9 @@ const Orders = observer(() => {
         switch (orders) {
             case 'empty':
                 return(
-                    <UnAuthorized page={'orders'} setStatus={setOrders}/>
+                    <React.Fragment>
+                        {!globals.getIsAuth ? <UnAuthorized page={'orders'} setStatus={setOrders}/> : <Authorized page={'orders'} setStatus={setOrders}/>}
+                    </React.Fragment>
                 )
             case 'have':
                 return (
