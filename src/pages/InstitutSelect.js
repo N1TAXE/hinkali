@@ -111,7 +111,7 @@ const InstitutSelect = observer(() => {
                                      alt=""/>
                                 ))}
                             </Carousel>
-                            <div className="map__institute-content">
+                            <div className="map__institute-content no-drag">
                                 <div className="institute-header">
                                     <h3>
                                         ул.Турецкая, 25, Симферополь

@@ -11,7 +11,7 @@ const ModalCard = ({setIsOpened, children, data}) => {
     };
 
     const handleDrag = (e, data) => {
-        if (data.y >= (data.node.clientHeight / 2)) {
+        if (data.y >= (data.node.clientHeight / 3.5)) {
             setPositionY(data.node.clientHeight)
             setTimeout(() => {
                 setIsOpened(false)

@@ -111,18 +111,18 @@ const ProductCard = ({data, page}) => {
                 <ModalCard setIsOpened={setIsModalOpened}>
                     <div className="modal">
                         <div className="modal__wrapper">
-                            <div className="product__modal-content">
+                            <div className="product__modal-img">
+                                {data.discount && (
+                                    <div className="product__modal-discount">
+                                        -{data.discount}%
+                                    </div>
+                                )}
+                                <img src={CardPhoto} alt=""/>
+                            </div>
+                            <div className="product__modal-content no-drag">
                                 <svg className="no-drag product__modal-close" onClick={() => setIsModalOpened(false)} width="48" height="48" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
                                     <path d="M30.3 17.7102C29.91 17.3202 29.28 17.3202 28.89 17.7102L24 22.5902L19.11 17.7002C18.72 17.3102 18.09 17.3102 17.7 17.7002C17.31 18.0902 17.31 18.7202 17.7 19.1102L22.59 24.0002L17.7 28.8902C17.31 29.2802 17.31 29.9102 17.7 30.3002C18.09 30.6902 18.72 30.6902 19.11 30.3002L24 25.4102L28.89 30.3002C29.28 30.6902 29.91 30.6902 30.3 30.3002C30.69 29.9102 30.69 29.2802 30.3 28.8902L25.41 24.0002L30.3 19.1102C30.68 18.7302 30.68 18.0902 30.3 17.7102Z" fill="#8D191D"/>
                                 </svg>
-                                <div className="product__modal-img">
-                                    {data.discount && (
-                                            <div className="product__modal-discount">
-                                                -{data.discount}%
-                                            </div>
-                                        )}
-                                    <img src={CardPhoto} alt=""/>
-                                </div>
                                 <div className="product__modal-header">
                                     <h2>{data.title}</h2>
                                     <div className="product__modal-header-price">
@@ -149,7 +149,7 @@ const ProductCard = ({data, page}) => {
                                             <svg width="28" height="28" viewBox="0 0 28 28" fill="none" xmlns="http://www.w3.org/2000/svg">
                                                 <path d="M17.9999 14.6668H9.99992C9.63325 14.6668 9.33325 14.3668 9.33325 14.0002C9.33325 13.6335 9.63325 13.3335 9.99992 13.3335H17.9999C18.3666 13.3335 18.6666 13.6335 18.6666 14.0002C18.6666 14.3668 18.3666 14.6668 17.9999 14.6668Z" fill="#111111"/>
                                             </svg>
-                                            <input value="1" type="number"/>
+                                            <input onClick={(e) => e.target.select()} value="1" type="number"/>
                                             <svg width="28" height="28" viewBox="0 0 28 28" fill="none" xmlns="http://www.w3.org/2000/svg">
                                                 <path d="M17.9999 14.6668H14.6666V18.0002C14.6666 18.3668 14.3666 18.6668 13.9999 18.6668C13.6333 18.6668 13.3333 18.3668 13.3333 18.0002V14.6668H9.99992C9.63325 14.6668 9.33325 14.3668 9.33325 14.0002C9.33325 13.6335 9.63325 13.3335 9.99992 13.3335H13.3333V10.0002C13.3333 9.6335 13.6333 9.3335 13.9999 9.3335C14.3666 9.3335 14.6666 9.6335 14.6666 10.0002V13.3335H17.9999C18.3666 13.3335 18.6666 13.6335 18.6666 14.0002C18.6666 14.3668 18.3666 14.6668 17.9999 14.6668Z" fill="#111111"/>
                                             </svg>
@@ -229,12 +229,12 @@ const ProductCard = ({data, page}) => {
                                         <svg width="28" height="28" viewBox="0 0 28 28" fill="none" xmlns="http://www.w3.org/2000/svg">
                                             <path d="M17.9999 14.6668H9.99992C9.63325 14.6668 9.33325 14.3668 9.33325 14.0002C9.33325 13.6335 9.63325 13.3335 9.99992 13.3335H17.9999C18.3666 13.3335 18.6666 13.6335 18.6666 14.0002C18.6666 14.3668 18.3666 14.6668 17.9999 14.6668Z" fill="#111111"/>
                                         </svg>
-                                        <input value="1" type="number"/>
+                                        <input onClick={(e) =>  e.target.select()} value="1" type="number"/>
                                         <svg width="28" height="28" viewBox="0 0 28 28" fill="none" xmlns="http://www.w3.org/2000/svg">
                                             <path d="M17.9999 14.6668H14.6666V18.0002C14.6666 18.3668 14.3666 18.6668 13.9999 18.6668C13.6333 18.6668 13.3333 18.3668 13.3333 18.0002V14.6668H9.99992C9.63325 14.6668 9.33325 14.3668 9.33325 14.0002C9.33325 13.6335 9.63325 13.3335 9.99992 13.3335H13.3333V10.0002C13.3333 9.6335 13.6333 9.3335 13.9999 9.3335C14.3666 9.3335 14.6666 9.6335 14.6666 10.0002V13.3335H17.9999C18.3666 13.3335 18.6666 13.6335 18.6666 14.0002C18.6666 14.3668 18.3666 14.6668 17.9999 14.6668Z" fill="#111111"/>
                                         </svg>
                                     </div>
-                                    <button onClick={() => setIsModalOpened(false)} className="btn btn-sm btn-red no-drag">
+                                    <button onClick={() => setIsModalOpened(false)} className="btn btn-md btn-red no-drag">
                                         <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                                             <path d="M18 13H13V18C13 18.55 12.55 19 12 19C11.45 19 11 18.55 11 18V13H6C5.45 13 5 12.55 5 12C5 11.45 5.45 11 6 11H11V6C11 5.45 11.45 5 12 5C12.55 5 13 5.45 13 6V11H18C18.55 11 19 11.45 19 12C19 12.55 18.55 13 18 13Z" fill="white"/>
                                         </svg>

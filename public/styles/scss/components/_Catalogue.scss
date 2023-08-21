@@ -190,7 +190,11 @@
 .product {
   &__modal {
     &-buttons {
+      z-index: 2;
+      position: fixed;
       display: flex;
+      bottom: 0;
+      left: 0;
       width: 100%;
       padding: 8px 16px;
       align-items: center;
@@ -207,7 +211,7 @@
     &-content {
       display: flex;
       flex-direction: column;
-      overflow-y: auto;
+      padding-bottom: 64px;
       svg {
         z-index: 1;
       }

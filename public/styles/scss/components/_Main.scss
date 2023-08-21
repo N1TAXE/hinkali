@@ -80,6 +80,8 @@ body {
     overflow: hidden;
     background: #fff;
     border-radius: 17px 17px 0 0;
+    max-height: 90vh;
+    overflow-y: auto;
   }
   &__bg {
     z-index: 4;
