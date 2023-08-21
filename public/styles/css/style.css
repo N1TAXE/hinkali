@@ -278,7 +278,6 @@ table {
 html, body {
   font-family: "Tilda Sans", serif;
   min-height: 100vh;
-  overflow-x: hidden;
   font-feature-settings: "lnum";
   font-style: normal;
 }
@@ -1033,12 +1032,16 @@ body {
 }
 
 .select__search {
+  position: sticky;
+  top: 0;
+  left: 0;
   display: flex;
   padding: 16px;
   flex-direction: column;
   align-items: flex-start;
   gap: 4px;
   align-self: stretch;
+  background: #fff;
 }
 .select__header {
   display: flex;
