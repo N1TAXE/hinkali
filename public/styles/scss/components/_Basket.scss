@@ -126,33 +126,126 @@
         line-height: 20px;
       }
 
+      &-buttons{
+        display: flex;
+        align-items: center;
+        gap: 16px;
+      }
+
     }
+
+
+    //&__dozen__one-more{
+    //  display: flex;
+    //  justify-content: center;
+    //  align-items: center;
+    //  padding: 16px;
+    //
+    //  border-radius: 17px;
+    //  background: #8D191D;
+    //  box-shadow: 0 4px 24px 0 rgba(0, 0, 0, 0.12);
+    //
+    //  &__item{
+    //    display: flex;
+    //    flex-direction: column;
+    //    gap: 4px;
+    //
+    //    &-title{
+    //      color: #FFF;
+    //      font-size: 18px;
+    //      font-weight: 700;
+    //      line-height: 20px;
+    //    }
+    //
+    //    &-addition{
+    //      color: #FAE1E2;
+    //      font-size: 12px;
+    //      font-weight: 400;
+    //      line-height: 16px;
+    //    }
+    //  }
+    //}
+
 
     &__dozen{
       display: flex;
       justify-content: center;
       align-items: center;
-      gap: 8px;
       padding: 16px;
 
       border-radius: 17px;
-      background: #8D191D;
       box-shadow: 0 4px 24px 0 rgba(0, 0, 0, 0.12);
 
       &__item{
         display: flex;
+        gap: 8px;
+        flex: 1 1 0;
+
+        &__icon{
+          display: flex;
+          align-items: center;
+          gap: 4px;
+
+          svg{
+            width: 40px;
+            height: 40px;
+          }
+
+          &-numb{
+            width: 36px;
+            height: 36px;
+            color: #FFF;
+            text-align: center;
+            font-size: 32px;
+            font-weight: 700;
+            line-height: 36px;
+          }
+        }
+
+        &__content{
+          display: flex;
+          flex-direction: column;
+          align-items: flex-start;
+
+          &-title{
+            color: #FFF;
+            font-size: 18px;
+            font-weight: 700;
+            line-height: 20px;
+          }
+
+          &-addition{
+            color: #FFF;
+            font-size: 12px;
+            font-weight: 400;
+            line-height: 16px;
+          }
+        }
+      }
+    }
+
+    .dozen--gift {
+      background: #558950;
+    }
+
+    .dozen--discount{
+      background: #132A3E;
+    }
+
+    .dozen--one_more{
+      background: #8D191D;
+      &__item{
         flex-direction: column;
         gap: 4px;
 
-        &-title{
+        &-tile{
           color: #FFF;
           font-size: 18px;
           font-weight: 700;
           line-height: 20px;
         }
-
         &-addition{
-          color: #FAE1E2;
+          color: #FFF;
           font-size: 12px;
           font-weight: 400;
           line-height: 16px;

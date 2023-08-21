@@ -17,6 +17,13 @@
   font-weight: 700;
   line-height: 20px;
 
+  &__left{
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    flex: 1 0 auto;
+  }
+
   &__icon{
     display: flex;
     width: 48px;
@@ -31,4 +38,6 @@
       fill: #8D191D;
     }
   }
+
+
 }

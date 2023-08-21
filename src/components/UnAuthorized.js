@@ -5,7 +5,6 @@ import {AUTH_ROUTE, CATALOGUE_ROUTE, PROFILE_ROUTE} from "../utils/consts";
 import {observer} from "mobx-react-lite";
 import {Context} from "../index";
 import no_addresses from "../assets/images/delivery/no_addresses.png";
-import {Button} from "react-yandex-maps";
 
 const UnAuthorized = observer(({page, setStatus}) => {
     const [text, setText] = useState('')

@@ -72,7 +72,7 @@ const Catalogue = () => {
             <div className="catalogue-content">
                 <div className="catalogue-content__cards">
                     {products && products.map((item)=>(
-                        <ProductCard data={item} key={item.id}/>
+                        <ProductCard page={'catalogue'} data={item} key={item.id}/>
                     ))}
                 </div>
             </div>

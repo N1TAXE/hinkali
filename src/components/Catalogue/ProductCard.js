@@ -1,10 +1,109 @@
-import React, {useState} from 'react';
+import React, {useEffect, useState} from 'react';
 import CardPhoto from "../../assets/images/cards/Photo.png";
 import {NavLink} from "react-router-dom";
 import ModalCard from "../ModalCard";
 
-const ProductCard = ({data}) => {
+const ProductCard = ({data, page}) => {
     const [isModalOpened, setIsModalOpened] = useState(false)
+    const [productCard, setProductCard] = useState('')
+
+        useEffect(() => {
+            switch (page) {
+                case 'catalogue':
+                    return(
+                        setProductCard('catalogue')
+                    )
+                case 'basket':
+                    return (
+                        setProductCard('basket')
+                    )
+            }
+        })
+
+        const getProductCard = () =>{
+            switch (productCard) {
+                case 'catalogue':
+                    return(
+                        <React.Fragment>
+                            <div className="product-card-img">
+                                <img src={CardPhoto} alt="Вкусно"/>
+                                <div className="product-card-sale">-{data.discount}%</div>
+                                <div className="product-card-ended">
+                                    Упс..
+                                    <br/>
+                                    Закончилось
+                                </div>
+                            </div>
+                            <div className="product-card__content">
+                                <div className="product-card__content-title">
+                                    {data.title}
+                                </div>
+                                <div className="product-card__content__info">
+                                    <div className="product-card__content__info-weight">
+                                        {data.weight} гр
+                                    </div>
+                                    <div className="product-card__content__info-cost">
+                                        {data.oldPrice && (
+                                            <span>{data.oldPrice} ₽</span>
+                                        )}
+                                        {data.price} ₽
+                                    </div>
+                                </div>
+                            </div>
+                            <div className="product-card__button">
+                                <NavLink to="#openModal">
+                                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 17 16" fill="none">
+                                        <path d="M12.4999 8.66781H9.16659V12.0011C9.16659 12.3678 8.86659 12.6678 8.49992 12.6678C8.13325 12.6678 7.83325 12.3678 7.83325 12.0011V8.66781H4.49992C4.13325 8.66781 3.83325 8.36781 3.83325 8.00114C3.83325 7.63447 4.13325 7.33447 4.49992 7.33447H7.83325V4.00114C7.83325 3.63447 8.13325 3.33447 8.49992 3.33447C8.86659 3.33447 9.16659 3.63447 9.16659 4.00114V7.33447H12.4999C12.8666 7.33447 13.1666 7.63447 13.1666 8.00114C13.1666 8.36781 12.8666 8.66781 12.4999 8.66781Z"/>
+                                    </svg>
+                                    Добавить
+                                </NavLink>
+                            </div>
+                        </React.Fragment>
+                    )
+                case 'basket':
+                    return (
+                        <React.Fragment>
+                            <div className="product-card-img">
+                                <img src={CardPhoto} alt="Вкусно"/>
+                                <div className="product-card-sale">-{data.discount}%</div>
+                                <div className="product-card-ended">
+                                    Упс..
+                                    <br/>
+                                    Закончилось
+                                </div>
+                            </div>
+                            <div className="product-card__content">
+                                <div className="product-card__content__info">
+
+                                    <div className="product-card__content__info-title">
+                                        {data.title}
+                                    </div>
+
+                                    <div className="product-card__content__info-weight">
+                                        {data.weight} гр
+                                    </div>
+
+                                </div>
+                                <div className="product-card__content__price">
+                                    <div className="product-card__content__price-cost">
+                                        {data.oldPrice && (
+                                            <span>{data.oldPrice} ₽</span>
+                                        )}
+                                        {data.price} ₽
+                                    </div>
+                                </div>
+                            </div>
+                            <div className="product-card__button">
+                                <button className="btn btn-gray">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16" fill="none">
+                                        <path/>
+                                    </svg>
+                                </button>
+                            </div>
+                        </React.Fragment>
+                    )
+            }
+        }
 
     return (
         <React.Fragment>
@@ -148,40 +247,8 @@ const ProductCard = ({data}) => {
                 </ModalCard>
             }
 
-            <div onClick={() => setIsModalOpened(true)} className={`catalogue-content__cards__card ${data.discount ? 'sale' : ''} ${!data.inStock ? 'ended' : ''}`}>
-                <div className="catalogue-content__cards__card-img">
-                    <img src={CardPhoto} alt="Вкусно"/>
-                    <div className="catalogue-content__cards__card-sale">-{data.discount}%</div>
-                    <div className="catalogue-content__cards__card-ended">
-                        Упс..
-                        <br/>
-                        Закончилось
-                    </div>
-                </div>
-                <div className="catalogue-content__cards__card__content">
-                    <div className="catalogue-content__cards__card__content-title">
-                        {data.title}
-                    </div>
-                    <div className="catalogue-content__cards__card__content__info">
-                        <div className="catalogue-content__cards__card__content__info-weight">
-                            {data.weight} гр
-                        </div>
-                        <div className="catalogue-content__cards__card__content__info-cost">
-                            {data.oldPrice && (
-                                <span>{data.oldPrice} ₽</span>
-                            )}
-                            {data.price} ₽
-                        </div>
-                    </div>
-                </div>
-                <div className="catalogue-content__cards__card__button">
-                    <NavLink to="#openModal">
-                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 17 16" fill="none">
-                            <path d="M12.4999 8.66781H9.16659V12.0011C9.16659 12.3678 8.86659 12.6678 8.49992 12.6678C8.13325 12.6678 7.83325 12.3678 7.83325 12.0011V8.66781H4.49992C4.13325 8.66781 3.83325 8.36781 3.83325 8.00114C3.83325 7.63447 4.13325 7.33447 4.49992 7.33447H7.83325V4.00114C7.83325 3.63447 8.13325 3.33447 8.49992 3.33447C8.86659 3.33447 9.16659 3.63447 9.16659 4.00114V7.33447H12.4999C12.8666 7.33447 13.1666 7.63447 13.1666 8.00114C13.1666 8.36781 12.8666 8.66781 12.4999 8.66781Z"/>
-                        </svg>
-                        Добавить
-                    </NavLink>
-                </div>
+            <div onClick={() => setIsModalOpened(true)} className={`product-card ${data.discount ? 'sale' : ''} ${!data.inStock ? 'ended' : ''} ${data.selected ? 'added' : ''}`}>
+                {getProductCard()}
             </div>
         </React.Fragment>
     );

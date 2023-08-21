@@ -154,7 +154,7 @@ const OrdersCard = ({data}) => {
                 </div>
                 <div className="orders__list__item__price">
                     Сумма
-                    <div className="catalogue-content__cards__card__content__info-cost">
+                    <div className="orders__list__item__price-cost">
                         <span>{data.orderOldCost} ₽</span>
                         {data.orderCost} ₽
                     </div>
