@@ -33,7 +33,7 @@ const UnAuthorized = ({page, setStatus}) => {
                     <React.Fragment>
                         <NavLink to={AUTH_ROUTE} className="btn btn-md btn-red">Войти</NavLink>
                         <button onClick={() => setStatus('remained')} className="btn btn-md btn-red">Остались товары</button>
-                        <NavLink to={PROFILE_ROUTE} className="btn btn-md btn-gray">Пропустить</NavLink>
+                        <button onClick={() => setStatus('unAuthOrder')} className="btn btn-md btn-gray">Пропустить</button>
                     </React.Fragment>
                 )
         }

@@ -100,6 +100,7 @@
     display: flex;
     flex-direction: column;
     padding: 16px 16px 8px;
+    gap: 8px;
 
 
     .form-radio{
@@ -139,6 +140,28 @@
             flex: 1 1 0;
           }
         }
+      }
+    }
+
+    &__notification{
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+      padding: 16px;
+
+      border-radius: 17px;
+      border: 2px solid #8D191D;
+      background: #FFF;
+      box-shadow: 0 4px 24px 0 rgba(0, 0, 0, 0.12);
+
+      h3, h4{
+        color: #111;
+      }
+      h5{
+        color: #8D191D;
+      }
+      small{
+        color: #4D4D4D;
       }
     }
   }
@@ -406,6 +429,11 @@
   }
 }
 
+  .close-soon{
+    opacity: 0.4;
+  }
+
+
   .order-placement__check__info__total-cost,.order-placement__check__info__delivery__price-cost, .order-placement__check__info__price-cost, .order-placement-remained__content__list__item__info-cost, .order-placement__check__info__list__item__info-cost{
     display: flex;
     align-self: center;
@@ -429,3 +457,76 @@
       }
     }
   }
+
+.modal-order-placement{
+  h3{
+    color: #111;
+  }
+  h4{
+    color: #8D191D;
+  }
+  small{
+    color: #4D4D4D;
+  }
+
+  &__content{
+    padding: 8px 16px 16px;
+
+    &__radio-item{
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 8px;
+
+      &-btn{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding: 8px;
+        svg{
+          width: 24px;
+          height: 24px;
+        }
+
+        input[type=radio]{
+          display: none;
+        }
+
+        input[type=radio]:checked + svg{
+          path{
+            d: path("M12 2C6.48 2 2 6.48 2 12C2 17.52 6.48 22 12 22C17.52 22 22 17.52 22 12C22 6.48 17.52 2 12 2ZM12 20C7.58 20 4 16.42 4 12C4 7.58 7.58 4 12 4C16.42 4 20 7.58 20 12C20 16.42 16.42 20 12 20ZM12 17C14.7614 17 17 14.7614 17 12C17 9.23858 14.7614 7 12 7C9.23858 7 7 9.23858 7 12C7 14.7614 9.23858 17 12 17Z") ;
+            fill: #8D191D;
+          }
+        }
+      }
+      &-addresses{
+        color: #111;
+        font-size: 18px;
+        font-weight: 600;
+        line-height: 20px;
+        flex: 1 1 0;
+      }
+
+      button{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding: 4px;
+        width: 44px;
+        height: 44px;
+        svg{
+          width: 24px;
+          height: 24px;
+        }
+      }
+    }
+
+    &-btn{
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 36px;
+      padding: 4px;
+    }
+  }
+}

@@ -34,14 +34,6 @@ const Authorized = ({page, setStatus}) => {
                         <button className="btn btn-none btn-none-defualt">Добавить блюда из последнего заказа</button>
                     </React.Fragment>
                 )
-            // case 'orderPlacement':
-            //     return(
-            //         <React.Fragment>
-            //             <button className="btn btn-md btn-red">Объединить всё</button>
-            //             <button onClick={() => setStatus('have')} className="btn btn-md btn-red">Тестовый список</button>
-            //             <button className="btn btn-md btn-gray">Очистить старую корзину</button>
-            //         </React.Fragment>
-            //     )
         }
     }
 
@@ -62,11 +54,6 @@ const Authorized = ({page, setStatus}) => {
                 setTitleAuth('Ваша корзина пуста')
                 setAuthButtons('basket')
                 return
-            // case 'orderPlacement':
-            //     setTextAuth('Вы можете просто очистить старую корзину или объединить всё и редактировать при необходимости')
-            //     setTitleAuth('В прошлый раз вы наполнили корзину, но не оформили заказ.')
-            //     setAuthButtons('orderPlacement')
-            //     return
         }
     })
 
