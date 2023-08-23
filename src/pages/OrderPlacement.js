@@ -5,7 +5,7 @@ import UnAuthorized from "../components/UnAuthorized";
 import {observer} from "mobx-react-lite";
 import {Context} from "../index";
 import {NavLink} from "react-router-dom";
-import {BASKET_ROUTE, MAIN_ROUTE, ORDERPLACEMENT_ROUTE} from "../utils/consts";
+import {BASKET_ROUTE, MAIN_ROUTE, ORDERACCEPTED_ROUTE} from "../utils/consts";
 import ModalCard from "../components/ModalCard";
 
 const OrderPlacement = observer(() => {
@@ -293,7 +293,7 @@ const OrderPlacement = observer(() => {
                             </div>
                         </div>
                         <div className="order-placement__buttons">
-                            <NavLink to={ORDERPLACEMENT_ROUTE} className="btn btn-md btn-red">Всё верно, продолжить</NavLink>
+                            <NavLink to={ORDERACCEPTED_ROUTE} className="btn btn-md btn-red">Всё верно, продолжить</NavLink>
                             <button onClick={() => setOrderPlacement('closeSoon')} className="btn btn-md btn-gray">Скоро закроется</button>
                             <NavLink to={BASKET_ROUTE} className="btn btn-md btn-gray">Назад</NavLink>
                             <NavLink className="order-placement__buttons-link" to={MAIN_ROUTE}>Продолжая, вы соглашаетесь на обработку персональных данных и условия пользовательского соглашения</NavLink>
@@ -668,7 +668,7 @@ const OrderPlacement = observer(() => {
                             </div>
                         </div>
                         <div className="order-placement__buttons">
-                            <NavLink to={ORDERPLACEMENT_ROUTE} className="btn btn-md btn-red">Всё верно, продолжить</NavLink>
+                            <NavLink to={ORDERACCEPTED_ROUTE} className="btn btn-md btn-red">Всё верно, продолжить</NavLink>
                             <button onClick={() => setOrderPlacement('closeSoon')} className="btn btn-md btn-gray">Скоро закроется</button>
                             <NavLink to={BASKET_ROUTE} className="btn btn-md btn-gray">Назад</NavLink>
                             <NavLink className="order-placement__buttons-link" to={MAIN_ROUTE}>Продолжая, вы соглашаетесь на обработку персональных данных и условия пользовательского соглашения</NavLink>
@@ -846,7 +846,7 @@ const OrderPlacement = observer(() => {
                             </div>
                         </div>
                         <div className="order-placement__buttons">
-                            <NavLink to={ORDERPLACEMENT_ROUTE} className="btn btn-md btn-red">Всё верно, продолжить</NavLink>
+                            <NavLink to={ORDERACCEPTED_ROUTE} className="btn btn-md btn-red">Всё верно, продолжить</NavLink>
                             <NavLink to={BASKET_ROUTE} className="btn btn-md btn-gray">Назад</NavLink>
                             <NavLink className="order-placement__buttons-link" to={MAIN_ROUTE}>Продолжая, вы соглашаетесь на обработку персональных данных и условия пользовательского соглашения</NavLink>
                         </div>
@@ -1022,7 +1022,7 @@ const OrderPlacement = observer(() => {
                             </div>
                         </div>
                         <div className="order-placement__buttons">
-                            <NavLink to={ORDERPLACEMENT_ROUTE} className="btn btn-md btn-red">Всё верно, продолжить</NavLink>
+                            <NavLink to={ORDERACCEPTED_ROUTE} className="btn btn-md btn-red">Всё верно, продолжить</NavLink>
                             <NavLink to={BASKET_ROUTE} className="btn btn-md btn-gray">Назад</NavLink>
                             <NavLink className="order-placement__buttons-link" to={MAIN_ROUTE}>Продолжая, вы соглашаетесь на обработку персональных данных и условия пользовательского соглашения</NavLink>
                         </div>

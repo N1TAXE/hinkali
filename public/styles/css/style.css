@@ -1920,6 +1920,7 @@ body {
   right: -264px;
   padding: 0 0 56px 0;
   transition: right ease 0.3s;
+  overflow-y: auto;
 }
 .menu.opened {
   right: 0;
