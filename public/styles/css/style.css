@@ -56,6 +56,8 @@ table {
 @font-face {
   font-family: "Tilda Sans";
   src: url("../fonts/TildaSans-VF.ttf") format("truetype"), url("../fonts/TildaSans-VF.woff") format("woff"), url("../fonts/TildaSans-VF.woff2") format("woff2");
+  font-weight: normal;
+  font-style: normal;
 }
 @media screen and (max-width: 768px) {
   h1 {
@@ -388,6 +390,9 @@ body {
   width: 48px;
   height: 48px;
 }
+.modal .no-drag {
+  cursor: pointer;
+}
 
 .input__item {
   display: flex;
@@ -453,6 +458,15 @@ body {
 .input__item .input__container input[placeholder] {
   text-overflow: ellipsis;
 }
+.input__item .input__container input[readonly] {
+  cursor: pointer;
+}
+.input__item .input__container input[type=date] {
+  cursor: pointer;
+}
+.input__item .input__container input[type=time] {
+  cursor: pointer;
+}
 
 .input__checkbox {
   display: flex;
@@ -483,6 +497,9 @@ body {
 }
 .input__checkbox .checkbox input:checked + svg {
   display: block;
+}
+.input__checkbox .checkbox input[type=checkbox] {
+  cursor: pointer;
 }
 .input__checkbox .checkbox svg {
   position: absolute;
@@ -563,6 +580,7 @@ body {
   padding: 4px 7px;
   width: 40px;
   height: 40px;
+  cursor: pointer;
 }
 .form-radio__toggle__item-icon {
   display: flex;
@@ -632,6 +650,7 @@ body {
   padding: 0;
   margin: 0;
   z-index: 2;
+  cursor: pointer;
 }
 .input__switch input[type=checkbox]:checked + .input__switch-icon {
   background: #fff;
@@ -885,8 +904,8 @@ body {
 }
 
 .carousel .slide img {
-  width: 100%;
   vertical-align: top;
+  object-fit: cover;
   border: 0;
 }
 
@@ -998,6 +1017,7 @@ body {
   background: none;
   width: 100%;
   padding: unset;
+  cursor: pointer;
 }
 .tab-bar__link {
   display: flex;
@@ -1106,6 +1126,7 @@ body {
   display: flex;
   align-items: center;
   gap: 16px;
+  cursor: pointer;
 }
 .select__item .item__letter {
   width: 40px;
@@ -1653,6 +1674,7 @@ body {
   border-radius: 17px;
   background: #FFF;
   box-shadow: 0 4px 24px 0 rgba(0, 0, 0, 0.12);
+  cursor: pointer;
 }
 .product-card-img {
   position: relative;
@@ -1941,6 +1963,7 @@ body {
   border: none;
   border-radius: 12px;
   background: none;
+  cursor: pointer;
 }
 .menu-header button svg {
   width: 24px;
@@ -2311,6 +2334,7 @@ body {
   flex: 1 0 auto;
 }
 .personal-content__items {
+  width: 100%;
   display: flex;
   gap: 8px;
   justify-content: center;
@@ -2867,6 +2891,9 @@ body {
   padding: 0;
   max-width: 144px;
 }
+.basket__content__product_card__info__buttons-input svg {
+  cursor: pointer;
+}
 .basket__content__tableware {
   display: flex;
   justify-content: space-between;
@@ -3273,9 +3300,6 @@ body {
   padding: 8px 16px;
   gap: 16px;
 }
-.order-placement__form .input__item .input__container input[placeholder] {
-  text-overflow: ellipsis;
-}
 .order-placement__payment-method {
   display: flex;
   flex-direction: column;
@@ -3290,6 +3314,7 @@ body {
   justify-content: center;
   align-items: center;
   gap: 8px;
+  cursor: pointer;
 }
 .order-placement__payment-method__item-name {
   color: #8D191D;

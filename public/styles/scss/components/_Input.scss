@@ -78,6 +78,15 @@
       &[placeholder]{
         text-overflow: ellipsis;
       }
+      &[readonly]{
+        cursor: pointer;
+      }
+      &[type=date]{
+        cursor: pointer;
+      }
+      &[type=time]{
+        cursor: pointer;
+      }
     }
   }
 }
@@ -111,6 +120,9 @@
         &+svg {
           display: block;
         }
+      }
+      &[type=checkbox]{
+        cursor: pointer;
       }
     }
 
@@ -201,6 +213,7 @@
         padding: 4px 7px;
         width: 40px;
         height: 40px;
+        cursor: pointer;
 
         &-icon{
           display: flex;
@@ -279,6 +292,7 @@
     padding: 0;
     margin: 0;
     z-index: 2;
+    cursor: pointer;
   }
 
   input[type=checkbox] {

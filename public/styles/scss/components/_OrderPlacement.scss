@@ -171,16 +171,7 @@
     flex-direction: column;
     padding: 8px 16px;
     gap: 16px;
-
-    .input__item{
-      .input__container{
-        input[placeholder]{
-          text-overflow: ellipsis;
-        }
       }
-    }
-
-  }
 
   &__payment-method{
     display: flex;
@@ -197,6 +188,7 @@
       justify-content: center;
       align-items: center;
       gap: 8px;
+      cursor: pointer;
 
       &-name{
         color: #8D191D;
