@@ -35,19 +35,19 @@ const ProductCard = ({data, page}) => {
                                 </div>
                             </div>
                             <div className="product-card__content">
-                                <div className="product-card__content-title">
+                                <h5 className="product-card__content-title">
                                     {data.title}
-                                </div>
+                                </h5>
                                 <div className="product-card__content__info">
-                                    <div className="product-card__content__info-weight">
+                                    <small className="product-card__content__info-weight">
                                         {data.weight} гр
-                                    </div>
-                                    <div className="product-card__content__info-cost">
+                                    </small>
+                                    <h3 className="product-card__content__info-cost price--cost">
                                         {data.oldPrice && (
-                                            <span>{data.oldPrice} ₽</span>
+                                            <span><small>{data.oldPrice} ₽</small></span>
                                         )}
-                                        {data.price} ₽
-                                    </div>
+                                        <h3>{data.price} ₽</h3>
+                                    </h3>
                                 </div>
                             </div>
                             <div className="product-card__button">
@@ -85,11 +85,11 @@ const ProductCard = ({data, page}) => {
 
                                 </div>
                                 <div className="product-card__content__price">
-                                    <div className="product-card__content__price-cost">
+                                    <div className="product-card__content__price-cost price--cost">
                                         {data.oldPrice && (
-                                            <span>{data.oldPrice} ₽</span>
+                                            <span><small>{data.oldPrice} ₽</small></span>
                                         )}
-                                        {data.price} ₽
+                                        <h3>{data.price} ₽</h3>
                                     </div>
                                 </div>
                             </div>
@@ -125,9 +125,9 @@ const ProductCard = ({data, page}) => {
                                 </svg>
                                 <div className="product__modal-header">
                                     <h2>{data.title}</h2>
-                                    <div className="product__modal-header-price">
+                                    <div className="product__modal-header-price price--cost">
                                         {data.oldPrice && (<span className="product-oldprice">{data.oldPrice} ₽</span>)}
-                                        <span className="product-price">{data.price} ₽</span>
+                                        <h1 className="product-price">{data.price} ₽</h1>
                                     </div>
                                 </div>
                                 <div className="product__modal-additional">

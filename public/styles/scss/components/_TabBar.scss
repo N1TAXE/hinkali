@@ -32,18 +32,13 @@
     align-items: center;
     justify-content: center;
     text-decoration: none;
-
-    small{
-      font-size: 12px;
-      line-height: 16px;
-      font-weight: 700;
-      color: #808080;
-    }
+    font-size: 12px;
+    line-height: 16px;
+    font-weight: 700;
+    color: #808080;
 
     &.active{
-      small{
-        color: #8D191D;
-      }
+      color: $c_red;
 
       .tab-bar__img{
         svg{
@@ -81,7 +76,7 @@
         border: #FFF;
         background: #FDCB3D;
 
-        color: #111;
+        color: $c-black;
         text-align: center;
         font-size: 10px;
         font-weight: 600;

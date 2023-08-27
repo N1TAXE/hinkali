@@ -65,7 +65,7 @@
       display: flex;
       align-items: center;
       gap: 8px;
-      color: #111;
+      color: $c-black;
       font-size: 16px;
       font-weight: 400;
       line-height: 20px;
@@ -74,7 +74,7 @@
       span {
         display: flex;
         flex-direction: column;
-        color: #111;
+        color: $c-black;
         font-size: 16px;
         font-weight: 400;
         line-height: 20px;
@@ -101,7 +101,7 @@
     justify-content: center;
     align-items: center;
     padding: 20px 16px;
-    color: #8D191D;
+    color: $c_red;
     font-size: 12px;
     font-weight: 400;
     line-height: 16px;

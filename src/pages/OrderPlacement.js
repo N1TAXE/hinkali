@@ -32,18 +32,18 @@ const OrderPlacement = observer(() => {
                                     <h3 className="order-placement-remained__content__info-title">
                                         В прошлый раз вы наполнили корзину, но не оформили заказ.
                                     </h3>
-                                    <div className="order-placement-remained__content__info-addition">
+                                    <p className="order-placement-remained__content__info-addition">
                                         Вы можете просто очистить старую корзину или объединить всё и редактировать при необходимости
-                                    </div>
+                                    </p>
                                 </div>
                                 <div className="order-placement-remained__content__list">
                                     {Array.from({length:3}, (_,i) => (
                                         <div key={i} className="order-placement-remained__content__list__item">
                                             <div className="order-placement-remained__content__list__item__info">
-                                                <div className="order-placement-remained__content__list__item__info-title">Хинкали с мясом без зелени</div>
-                                                <div className="order-placement-remained__content__list__item__info-cost">
+                                                <small className="order-placement-remained__content__list__item__info-title">Хинкали с мясом без зелени</small>
+                                                <div className="order-placement-remained__content__list__item__info-cost price--cost">
                                                     <span>465 ₽</span>
-                                                    500 ₽
+                                                    <h5>500 ₽</h5>
                                                 </div>
                                             </div>
                                             <div className="order-placement-remained__content__list__item-price">
@@ -231,9 +231,9 @@ const OrderPlacement = observer(() => {
                                         <div key={i} className="order-placement-remained__content__list__item">
                                             <div className="order-placement-remained__content__list__item__info">
                                                 <div className="order-placement-remained__content__list__item__info-title">Хинкали с мясом без зелени</div>
-                                                <div className="order-placement-remained__content__list__item__info-cost">
+                                                <div className="order-placement-remained__content__list__item__info-cost price--cost">
                                                     <span>465 ₽</span>
-                                                    500 ₽
+                                                    <h5>500 ₽</h5>
                                                 </div>
                                             </div>
                                             <div className="order-placement-remained__content__list__item-price">
@@ -244,9 +244,9 @@ const OrderPlacement = observer(() => {
                                 </div>
                                 <div className="order-placement__check__info__price">
                                     <h3 className="order-placement__check__info__price-title">Стоимость заказа</h3>
-                                    <div className="order-placement__check__info__price-cost">
-                                        <span>700 ₽</span>
-                                        550 ₽
+                                    <div className="order-placement__check__info__price-cost price--cost">
+                                        <span><small>700 ₽</small></span>
+                                        <h3>550 ₽</h3>
                                     </div>
                                 </div>
                                 <div className="order-placement__check__info__delivery">
@@ -272,9 +272,9 @@ const OrderPlacement = observer(() => {
                                 </div>
                                 <div className="order-placement__check__info__total">
                                     <h2 className="order-placement__check__info__total-title">Итого</h2>
-                                    <div className="order-placement__check__info__total-cost">
+                                    <div className="order-placement__check__info__total-cost price--cost">
                                         <span>700 ₽</span>
-                                        550 ₽
+                                        <h2>550 ₽</h2>
                                     </div>
                                 </div>
                                 <div className="order-placement__check__info__payment">
@@ -606,9 +606,9 @@ const OrderPlacement = observer(() => {
                                         <div key={i} className="order-placement-remained__content__list__item">
                                             <div className="order-placement-remained__content__list__item__info">
                                                 <div className="order-placement-remained__content__list__item__info-title">Хинкали с мясом без зелени</div>
-                                                <div className="order-placement-remained__content__list__item__info-cost">
+                                                <div className="order-placement-remained__content__list__item__info-cost price--cost">
                                                     <span>465 ₽</span>
-                                                    500 ₽
+                                                    <h5>500 ₽</h5>
                                                 </div>
                                             </div>
                                             <div className="order-placement-remained__content__list__item-price">
@@ -619,17 +619,17 @@ const OrderPlacement = observer(() => {
                                 </div>
                                 <div className="order-placement__check__info__price">
                                     <h3 className="order-placement__check__info__price-title">Стоимость заказа</h3>
-                                    <div className="order-placement__check__info__price-cost">
-                                        <span>700 ₽</span>
-                                        550 ₽
+                                    <div className="order-placement__check__info__price-cost price--cost">
+                                        <span><small>700 ₽</small></span>
+                                        <h3>550 ₽</h3>
                                     </div>
                                 </div>
                                 <div className="order-placement__check__info__delivery">
                                     <div className="order-placement__check__info__delivery__price">
                                         <h3 className="order-placement__check__info__delivery__price-title">Доставка</h3>
-                                        <div className="order-placement__check__info__delivery__price-cost">
-                                            <span></span>
-                                            Бесплатно
+                                        <div className="order-placement__check__info__delivery__price-cost price--cost">
+                                            <span><small></small></span>
+                                            <h3>Бесплатно</h3>
                                         </div>
                                     </div>
                                     <div className="order-placement__check__info__delivery__info">
@@ -649,7 +649,7 @@ const OrderPlacement = observer(() => {
                                     <h2 className="order-placement__check__info__total-title">Итого</h2>
                                     <div className="order-placement__check__info__total-cost">
                                         <span>700 ₽</span>
-                                        550 ₽
+                                        <h2>550 ₽</h2>
                                     </div>
                                 </div>
                                 <div className="order-placement__check__info__payment">
@@ -805,9 +805,9 @@ const OrderPlacement = observer(() => {
                                         <div key={i} className="order-placement-remained__content__list__item">
                                             <div className="order-placement-remained__content__list__item__info">
                                                 <div className="order-placement-remained__content__list__item__info-title">Хинкали с мясом без зелени</div>
-                                                <div className="order-placement-remained__content__list__item__info-cost">
+                                                <div className="order-placement-remained__content__list__item__info-cost price--cost">
                                                     <span>465 ₽</span>
-                                                    500 ₽
+                                                    <h5>500 ₽</h5>
                                                 </div>
                                             </div>
                                             <div className="order-placement-remained__content__list__item-price">
@@ -818,16 +818,16 @@ const OrderPlacement = observer(() => {
                                 </div>
                                 <div className="order-placement__check__info__price">
                                     <h3 className="order-placement__check__info__price-title">Стоимость заказа</h3>
-                                    <div className="order-placement__check__info__price-cost">
-                                        <span>700 ₽</span>
-                                        550 ₽
+                                    <div className="order-placement__check__info__price-cost price--cost">
+                                        <span><small>700 ₽</small></span>
+                                        <h3>550 ₽</h3>
                                     </div>
                                 </div>
                                 <div className="order-placement__check__info__total">
                                     <h2 className="order-placement__check__info__total-title">Итого</h2>
-                                    <div className="order-placement__check__info__total-cost">
+                                    <div className="order-placement__check__info__total-cost price--cost">
                                         <span>700 ₽</span>
-                                        550 ₽
+                                        <h2>550 ₽</h2>
                                     </div>
                                 </div>
                                 <div className="order-placement__check__info__payment">
@@ -981,9 +981,9 @@ const OrderPlacement = observer(() => {
                                         <div key={i} className="order-placement-remained__content__list__item">
                                             <div className="order-placement-remained__content__list__item__info">
                                                 <div className="order-placement-remained__content__list__item__info-title">Хинкали с мясом без зелени</div>
-                                                <div className="order-placement-remained__content__list__item__info-cost">
+                                                <div className="order-placement-remained__content__list__item__info-cost price--cost">
                                                     <span>465 ₽</span>
-                                                    500 ₽
+                                                    <h5>500 ₽</h5>
                                                 </div>
                                             </div>
                                             <div className="order-placement-remained__content__list__item-price">
@@ -994,16 +994,16 @@ const OrderPlacement = observer(() => {
                                 </div>
                                 <div className="order-placement__check__info__price">
                                     <h3 className="order-placement__check__info__price-title">Стоимость заказа</h3>
-                                    <div className="order-placement__check__info__price-cost">
-                                        <span>700 ₽</span>
-                                        550 ₽
+                                    <div className="order-placement__check__info__price-cost price--cost">
+                                        <span><small>700 ₽</small></span>
+                                        <h3>550 ₽</h3>
                                     </div>
                                 </div>
                                 <div className="order-placement__check__info__total">
                                     <h2 className="order-placement__check__info__total-title">Итого</h2>
-                                    <div className="order-placement__check__info__total-cost">
+                                    <div className="order-placement__check__info__total-cost price--cost">
                                         <span>700 ₽</span>
-                                        550 ₽
+                                        <h2>550 ₽</h2>
                                     </div>
                                 </div>
                                 <div className="order-placement__check__info__payment">

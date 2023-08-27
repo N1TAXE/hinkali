@@ -26,9 +26,6 @@
       &-addition{
         color: #4D4D4D;
         text-align: center;
-        font-size: 16px;
-        font-weight: 400;
-        line-height: 20px;
       }
     }
 
@@ -55,18 +52,12 @@
           &-title, .order-placement__check__info__list__item__info-title{
             max-width: 180px;
             overflow: hidden;
-            color: #111;
+            color: $c-black;
             text-overflow: ellipsis;
             white-space: nowrap;
-            font-size: 14px;
-            font-weight: 400;
-            line-height: 16px;
           }
 
           &-cost, .order-placement__check__info__list__item__info-cost{
-            font-size: 14px;
-            font-weight: 700;
-            line-height: 16px;
 
             span{
               font-size: 12px;
@@ -106,7 +97,7 @@
     .form-radio{
 
       label{
-        color: #111;
+        color: $c-black;
         font-size: 24px;
         font-weight: 700;
         line-height: 28px;
@@ -135,7 +126,7 @@
           }
 
           input[type=radio]:checked + div{
-            color: #8D191D;
+            color: $c_red;
             font-weight: 700;
             flex: 1 1 0;
           }
@@ -155,10 +146,10 @@
       box-shadow: 0 4px 24px 0 rgba(0, 0, 0, 0.12);
 
       h3, h4{
-        color: #111;
+        color: $c-black;
       }
       h5{
-        color: #8D191D;
+        color: $c_red;
       }
       small{
         color: #4D4D4D;
@@ -191,7 +182,7 @@
       cursor: pointer;
 
       &-name{
-        color: #8D191D;
+        color: $c_red;
         font-size: 16px;
         font-weight: 400;
         line-height: 24px;
@@ -269,19 +260,6 @@
         justify-content: space-between;
         align-items: center;
         padding: 8px 0;
-
-        &-cost{
-          color: #8D191D;
-          font-size: 18px;
-          font-weight: 700;
-          line-height: 20px;
-          span{
-            color: #111;
-            font-size: 14px;
-            font-weight: 400;
-            line-height: 16px;
-          }
-        }
       }
       &__delivery{
         display: flex;
@@ -292,37 +270,25 @@
           display: flex;
           align-items: center;
           justify-content: space-between;
-          &-cost{
-            color: #8D191D;
-            font-size: 18px;
-            font-weight: 700;
-            line-height: 20px;
-            span{
-              color: #111;
-              font-size: 14px;
-              font-weight: 400;
-              line-height: 16px;
-            }
-          }
         }
         &__info{
           display: flex;
           flex-direction: column;
           gap: 4px;
           &-time{
-            color: #111;
+            color: $c-black;
             font-size: 16px;
             font-weight: 400;
             line-height: 20px;
           }
           &-contact{
-            color: #111;
+            color: $c-black;
             font-size: 14px;
             font-weight: 700;
             line-height: 16px;
           }
           &-addresses{
-            color: #111;
+            color: $c-black;
             font-size: 14px;
             font-weight: 400;
             line-height: 16px;
@@ -356,12 +322,8 @@
         align-items: center;
         padding: 16px 0;
         &-cost{
-          color: #8D191D;
-          font-size: 24px;
-          font-weight: 700;
-          line-height: 28px;
           span{
-            color: #111;
+            color: $c-black;
             font-size: 18px;
             font-weight: 400;
             line-height: 24px;
@@ -383,13 +345,13 @@
             justify-content: space-between;
             align-items: center;
             &-name{
-              color: #111;
+              color: $c-black;
               font-size: 16px;
               font-weight: 400;
               line-height: 20px;
             }
             &-cost{
-              color: #8D191D;
+              color: $c_red;
               font-size: 14px;
               font-weight: 700;
               line-height: 16px;
@@ -426,36 +388,12 @@
   }
 
 
-  .order-placement__check__info__total-cost,.order-placement__check__info__delivery__price-cost, .order-placement__check__info__price-cost, .order-placement-remained__content__list__item__info-cost, .order-placement__check__info__list__item__info-cost{
-    display: flex;
-    align-self: center;
-    align-items: center;
-    gap: 4px;
-    color: #8D191D;
-
-    span {
-      position: relative;
-      color: $c-black;
-
-      &:after {
-        position: absolute;
-        content: '';
-        left: 0;
-        top: 50%;
-        transform: rotate(-15deg) translateX(5%);
-        width: 100%;
-        height: 2px;
-        background: $c-red;
-      }
-    }
-  }
-
 .modal-order-placement{
   h3{
-    color: #111;
+    color: $c-black;
   }
   h4{
-    color: #8D191D;
+    color: $c_red;
   }
   small{
     color: #4D4D4D;
@@ -492,7 +430,7 @@
         }
       }
       &-addresses{
-        color: #111;
+        color: $c-black;
         font-size: 18px;
         font-weight: 600;
         line-height: 20px;

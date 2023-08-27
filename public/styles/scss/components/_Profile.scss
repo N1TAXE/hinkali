@@ -18,16 +18,10 @@
       padding: 16px 0;
 
       &-name{
-        color: #8D191D;
-        font-size: 24px;
-        font-weight: 700;
-        line-height: 28px;
+        color: $c_red;
       }
       &-numb{
         color: #4D4D4D;
-        font-size: 16px;
-        font-weight: 700;
-        line-height: 20px;
       }
     }
 
@@ -46,9 +40,6 @@
         justify-content: center;
         gap: 44px;
         color: #FFF;
-        font-size: 18px;
-        font-weight: 700;
-        line-height: 20px;
 
         button{
           padding: 4px;
@@ -96,7 +87,7 @@
         text-decoration: none;
         padding: 12px 0;
 
-        color: #111;
+        color: $c-black;
         font-size: 18px;
         font-weight: 600;
         line-height: 20px;

@@ -394,6 +394,28 @@ body {
   cursor: pointer;
 }
 
+.price--cost {
+  display: flex;
+  align-self: center;
+  align-items: flex-end;
+  gap: 4px;
+  color: #8D191D;
+}
+.price--cost span {
+  position: relative;
+  color: #111;
+}
+.price--cost span:after {
+  position: absolute;
+  content: "";
+  left: 0;
+  top: 50%;
+  transform: rotate(-15deg) translateX(5%);
+  width: 100%;
+  height: 2px;
+  background: #8D191D;
+}
+
 .input__item {
   display: flex;
   flex-direction: column;
@@ -1026,14 +1048,12 @@ body {
   align-items: center;
   justify-content: center;
   text-decoration: none;
-}
-.tab-bar__link small {
   font-size: 12px;
   line-height: 16px;
   font-weight: 700;
   color: #808080;
 }
-.tab-bar__link.active small {
+.tab-bar__link.active {
   color: #8D191D;
 }
 .tab-bar__link.active .tab-bar__img svg {
@@ -1602,29 +1622,10 @@ body {
   flex-shrink: 0;
 }
 .product__modal-header-price .product-oldprice {
-  position: relative;
-  color: #111;
   font-size: 18px;
   font-style: normal;
   font-weight: 400;
-  line-height: 24px; /* 133.333% */
-}
-.product__modal-header-price .product-oldprice:after {
-  position: absolute;
-  content: "";
-  left: 0;
-  top: 50%;
-  transform: rotate(-15deg) translateX(5%);
-  width: 100%;
-  height: 2px;
-  background: #8D191D;
-}
-.product__modal-header-price .product-price {
-  color: #8D191D;
-  font-size: 32px;
-  font-style: normal;
-  font-weight: 700;
-  line-height: 36px; /* 112.5% */
+  line-height: 24px;
 }
 .product__modal-additional {
   padding: 8px 16px;
@@ -1745,9 +1746,6 @@ body {
 .product-card__content-title {
   flex: 1 1 0;
   color: #111;
-  font-size: 14px;
-  font-weight: 700;
-  line-height: 16px;
 }
 .ended .product-card__content-title {
   color: #BFBFBF;
@@ -1759,22 +1757,9 @@ body {
 }
 .product-card__content__info-weight {
   color: #B3B3B3;
-  font-size: 14px;
-  font-weight: 400;
-  line-height: 16px;
 }
 .ended .product-card__content__info-weight {
   color: #BFBFBF;
-}
-.product-card__content__info-cost {
-  font-size: 18px;
-  font-weight: 700;
-  line-height: 16px;
-}
-.product-card__content__info-cost span {
-  font-size: 14px;
-  font-weight: 400;
-  line-height: 16px;
 }
 .product-card__button {
   display: flex;
@@ -1898,22 +1883,8 @@ body {
 .ended .product-card__content__price-cost, .ended .product-card__content__info-cost {
   color: #BFBFBF;
 }
-.product-card__content__price-cost span, .product-card__content__info-cost span {
-  position: relative;
-  color: #111;
-}
-.ended .product-card__content__price-cost span, .ended .product-card__content__info-cost span {
+.ended .product-card__content__price-cost span small, .ended .product-card__content__info-cost span small {
   color: #B3B3B3;
-}
-.product-card__content__price-cost span:after, .product-card__content__info-cost span:after {
-  position: absolute;
-  content: "";
-  left: 0;
-  top: 50%;
-  transform: rotate(-15deg) translateX(5%);
-  width: 100%;
-  height: 2px;
-  background: #8D191D;
 }
 .ended .product-card__content__price-cost span:after, .ended .product-card__content__info-cost span:after {
   background: #BFBFBF;
@@ -2045,23 +2016,14 @@ body {
 .auth-content__info-title {
   color: #111;
   text-align: center;
-  font-size: 24px;
-  font-weight: 700;
-  line-height: 28px;
 }
 .auth-content__info-text {
   color: #4D4D4D;
   text-align: center;
-  font-size: 16px;
-  font-weight: 400;
-  line-height: 20px;
 }
 .auth-content__info-numb {
   color: #4D4D4D;
   text-align: center;
-  font-size: 18px;
-  font-weight: 700;
-  line-height: 20px;
 }
 .auth-content__inputs {
   display: flex;
@@ -2195,15 +2157,9 @@ body {
 }
 .profile-content__info-name {
   color: #8D191D;
-  font-size: 24px;
-  font-weight: 700;
-  line-height: 28px;
 }
 .profile-content__info-numb {
   color: #4D4D4D;
-  font-size: 16px;
-  font-weight: 700;
-  line-height: 20px;
 }
 .profile-content__gift {
   display: flex;
@@ -2220,9 +2176,6 @@ body {
   justify-content: center;
   gap: 44px;
   color: #FFF;
-  font-size: 18px;
-  font-weight: 700;
-  line-height: 20px;
 }
 .profile-content__gift-header button {
   padding: 4px;
@@ -2289,9 +2242,6 @@ body {
   background: #fff;
   z-index: 1;
   color: #111;
-  font-size: 18px;
-  font-weight: 700;
-  line-height: 20px;
 }
 .top-bar__left {
   display: flex;
@@ -2478,9 +2428,6 @@ body {
 }
 .orders__list__item__header__info-numb {
   color: #111;
-  font-size: 18px;
-  font-weight: 700;
-  line-height: 20px;
 }
 .orders__list__item__header__info-date {
   color: #111;
@@ -2537,51 +2484,25 @@ body {
 }
 .orders__list__item__delivery-title {
   color: #111;
-  font-size: 18px;
-  font-weight: 700;
-  line-height: 20px;
 }
 .orders__list__item__delivery-addresses {
   color: #111;
-  font-size: 14px;
-  font-weight: 400;
-  line-height: 16px;
 }
 .orders__list__item__price {
   display: flex;
   justify-content: space-between;
   align-items: center;
+}
+.orders__list__item__price h3 {
   color: #111;
-  font-size: 18px;
-  font-weight: 700;
-  line-height: 20px;
 }
 .orders__list__item__price-cost {
   display: flex;
   align-self: center;
   gap: 4px;
+}
+.orders__list__item__price-cost h3 {
   color: #8D191D;
-  font-size: 18px;
-  font-weight: 700;
-  line-height: 16px;
-}
-.orders__list__item__price-cost span {
-  position: relative;
-  color: #111;
-  font-size: 14px;
-  font-style: normal;
-  font-weight: 400;
-  line-height: 16px;
-}
-.orders__list__item__price-cost span:after {
-  position: absolute;
-  content: "";
-  left: 0;
-  top: 50%;
-  transform: rotate(-15deg) translateX(5%);
-  width: 100%;
-  height: 2px;
-  background: #8D191D;
 }
 .orders__button {
   position: fixed;
@@ -2631,11 +2552,6 @@ body {
   font-weight: 400;
   line-height: 16px;
 }
-.orders__modal__content__list__item__name-cost {
-  font-size: 14px;
-  font-weight: 700;
-  line-height: 16px;
-}
 .orders__modal__content__list__item__name-cost span {
   font-size: 12px;
   font-weight: 500;
@@ -2657,16 +2573,6 @@ body {
   font-weight: 700;
   line-height: 20px;
 }
-.orders__modal__content__price-cost {
-  font-size: 18px;
-  font-weight: 700;
-  line-height: 20px;
-}
-.orders__modal__content__price-cost span {
-  font-size: 14px;
-  font-weight: 400;
-  line-height: 16px;
-}
 .orders__modal__content__delivery {
   display: flex;
   flex-direction: column;
@@ -2678,12 +2584,6 @@ body {
   justify-content: space-between;
   align-items: center;
   color: #111;
-  font-size: 18px;
-  font-weight: 700;
-  line-height: 20px;
-}
-.orders__modal__content__delivery__price-cost {
-  color: #8D191D;
   font-size: 18px;
   font-weight: 700;
   line-height: 20px;
@@ -2717,12 +2617,6 @@ body {
   align-items: center;
   padding: 16px 0;
   color: #111;
-  font-size: 24px;
-  font-weight: 700;
-  line-height: 28px;
-}
-.orders__modal__content__total-cost {
-  color: #8D191D;
   font-size: 24px;
   font-weight: 700;
   line-height: 28px;
@@ -2775,28 +2669,6 @@ body {
   flex-direction: column;
   gap: 8px;
   padding: 16px;
-}
-
-.orders__modal__content__list__item__name-cost, .orders__modal__content__price-cost, .orders__modal__content__total-cost {
-  display: flex;
-  align-self: center;
-  align-items: center;
-  gap: 4px;
-  color: #8D191D;
-}
-.orders__modal__content__list__item__name-cost span, .orders__modal__content__price-cost span, .orders__modal__content__total-cost span {
-  position: relative;
-  color: #111;
-}
-.orders__modal__content__list__item__name-cost span:after, .orders__modal__content__price-cost span:after, .orders__modal__content__total-cost span:after {
-  position: absolute;
-  content: "";
-  left: 0;
-  top: 50%;
-  transform: rotate(-15deg) translateX(5%);
-  width: 100%;
-  height: 2px;
-  background: #8D191D;
 }
 
 .basket {
@@ -2869,14 +2741,6 @@ body {
 }
 .basket__content__product_card__info__price-cost {
   padding: 8px 0;
-  font-size: 18px;
-  font-weight: 700;
-  line-height: 20px;
-}
-.basket__content__product_card__info__price-cost span {
-  font-size: 14px;
-  font-weight: 400;
-  line-height: 16px;
 }
 .basket__content__product_card__info__buttons {
   display: flex;
@@ -2905,9 +2769,6 @@ body {
   align-items: center;
   gap: 4px;
   color: #111;
-  font-size: 16px;
-  font-weight: 700;
-  line-height: 20px;
 }
 .basket__content__tableware-buttons {
   display: flex;
@@ -2952,9 +2813,6 @@ body {
 }
 .basket__content__dozen__item__content-title {
   color: #FFF;
-  font-size: 18px;
-  font-weight: 700;
-  line-height: 20px;
 }
 .basket__content__dozen__item__content-addition {
   color: #FFF;
@@ -2977,9 +2835,6 @@ body {
 }
 .basket__content .dozen--one_more__item-tile {
   color: #FFF;
-  font-size: 18px;
-  font-weight: 700;
-  line-height: 20px;
 }
 .basket__content .dozen--one_more__item-addition {
   color: #FFF;
@@ -3003,12 +2858,6 @@ body {
   font-weight: 700;
   line-height: 20px;
 }
-.basket__content__price__item-cost {
-  color: #8D191D;
-  font-size: 24px;
-  font-weight: 700;
-  line-height: 28px;
-}
 .basket__content__price__item-cost span {
   font-size: 18px;
   font-weight: 400;
@@ -3022,9 +2871,6 @@ body {
 }
 .basket__more-title {
   color: #111;
-  font-size: 18px;
-  font-weight: 700;
-  line-height: 20px;
 }
 .basket__more__content {
   display: grid;
@@ -3118,41 +2964,11 @@ body {
 }
 .basket__buttons__total-title {
   color: #111;
-  font-size: 18px;
-  font-weight: 700;
-  line-height: 20px;
-}
-.basket__buttons__total__price-cost {
-  font-size: 24px;
-  font-weight: 700;
-  line-height: 28px;
 }
 .basket__buttons__total__price-cost span {
   font-size: 18px;
   font-weight: 700;
   line-height: 20px;
-}
-
-.basket__content__product_card__info__price-cost, .basket__content__price__item-cost, .basket__more__content__product_card__info__price-cost, .basket__buttons__total__price-cost {
-  display: flex;
-  align-self: center;
-  align-items: center;
-  gap: 4px;
-  color: #8D191D;
-}
-.basket__content__product_card__info__price-cost span, .basket__content__price__item-cost span, .basket__more__content__product_card__info__price-cost span, .basket__buttons__total__price-cost span {
-  position: relative;
-  color: #111;
-}
-.basket__content__product_card__info__price-cost span:after, .basket__content__price__item-cost span:after, .basket__more__content__product_card__info__price-cost span:after, .basket__buttons__total__price-cost span:after {
-  position: absolute;
-  content: "";
-  left: 0;
-  top: 50%;
-  transform: rotate(-15deg) translateX(5%);
-  width: 100%;
-  height: 2px;
-  background: #8D191D;
 }
 
 .order-placement-remained {
@@ -3182,9 +2998,6 @@ body {
 .order-placement-remained__content__info-addition {
   color: #4D4D4D;
   text-align: center;
-  font-size: 16px;
-  font-weight: 400;
-  line-height: 20px;
 }
 .order-placement-remained__content__list, .order-placement-remained__content .order-placement__check__info__list {
   display: flex;
@@ -3211,14 +3024,6 @@ body {
   color: #111;
   text-overflow: ellipsis;
   white-space: nowrap;
-  font-size: 14px;
-  font-weight: 400;
-  line-height: 16px;
-}
-.order-placement-remained__content__list__item__info-cost, .order-placement-remained__content__list__item__info .order-placement__check__info__list__item__info-cost, .order-placement-remained__content__list__item .order-placement__check__info__list__item__info-cost, .order-placement-remained__content__list__item .order-placement__check__info__list__item__info .order-placement__check__info__list__item__info-cost, .order-placement-remained__content__list .order-placement__check__info__list__item__info-cost, .order-placement-remained__content__list .order-placement__check__info__list__item__info .order-placement__check__info__list__item__info-cost, .order-placement-remained__content__list .order-placement__check__info__list__item .order-placement__check__info__list__item__info-cost, .order-placement-remained__content__list .order-placement__check__info__list__item .order-placement__check__info__list__item__info .order-placement__check__info__list__item__info-cost, .order-placement-remained__content .order-placement__check__info__list__item__info-cost, .order-placement-remained__content .order-placement__check__info__list__item__info .order-placement__check__info__list__item__info-cost, .order-placement-remained__content .order-placement__check__info__list__item .order-placement__check__info__list__item__info-cost, .order-placement-remained__content .order-placement__check__info__list__item .order-placement__check__info__list__item__info .order-placement__check__info__list__item__info-cost, .order-placement-remained__content .order-placement__check__info__list .order-placement__check__info__list__item__info-cost, .order-placement-remained__content .order-placement__check__info__list .order-placement__check__info__list__item__info .order-placement__check__info__list__item__info-cost, .order-placement-remained__content .order-placement__check__info__list .order-placement__check__info__list__item .order-placement__check__info__list__item__info-cost, .order-placement-remained__content .order-placement__check__info__list .order-placement__check__info__list__item .order-placement__check__info__list__item__info .order-placement__check__info__list__item__info-cost {
-  font-size: 14px;
-  font-weight: 700;
-  line-height: 16px;
 }
 .order-placement-remained__content__list__item__info-cost span, .order-placement-remained__content__list__item__info .order-placement__check__info__list__item__info-cost span, .order-placement-remained__content__list__item .order-placement__check__info__list__item__info-cost span, .order-placement-remained__content__list__item .order-placement__check__info__list__item__info .order-placement__check__info__list__item__info-cost span, .order-placement-remained__content__list .order-placement__check__info__list__item__info-cost span, .order-placement-remained__content__list .order-placement__check__info__list__item__info .order-placement__check__info__list__item__info-cost span, .order-placement-remained__content__list .order-placement__check__info__list__item .order-placement__check__info__list__item__info-cost span, .order-placement-remained__content__list .order-placement__check__info__list__item .order-placement__check__info__list__item__info .order-placement__check__info__list__item__info-cost span, .order-placement-remained__content .order-placement__check__info__list__item__info-cost span, .order-placement-remained__content .order-placement__check__info__list__item__info .order-placement__check__info__list__item__info-cost span, .order-placement-remained__content .order-placement__check__info__list__item .order-placement__check__info__list__item__info-cost span, .order-placement-remained__content .order-placement__check__info__list__item .order-placement__check__info__list__item__info .order-placement__check__info__list__item__info-cost span, .order-placement-remained__content .order-placement__check__info__list .order-placement__check__info__list__item__info-cost span, .order-placement-remained__content .order-placement__check__info__list .order-placement__check__info__list__item__info .order-placement__check__info__list__item__info-cost span, .order-placement-remained__content .order-placement__check__info__list .order-placement__check__info__list__item .order-placement__check__info__list__item__info-cost span, .order-placement-remained__content .order-placement__check__info__list .order-placement__check__info__list__item .order-placement__check__info__list__item__info .order-placement__check__info__list__item__info-cost span {
   font-size: 12px;
@@ -3381,18 +3186,6 @@ body {
   align-items: center;
   padding: 8px 0;
 }
-.order-placement__check__info__price-cost {
-  color: #8D191D;
-  font-size: 18px;
-  font-weight: 700;
-  line-height: 20px;
-}
-.order-placement__check__info__price-cost span {
-  color: #111;
-  font-size: 14px;
-  font-weight: 400;
-  line-height: 16px;
-}
 .order-placement__check__info__delivery {
   display: flex;
   flex-direction: column;
@@ -3403,18 +3196,6 @@ body {
   display: flex;
   align-items: center;
   justify-content: space-between;
-}
-.order-placement__check__info__delivery__price-cost {
-  color: #8D191D;
-  font-size: 18px;
-  font-weight: 700;
-  line-height: 20px;
-}
-.order-placement__check__info__delivery__price-cost span {
-  color: #111;
-  font-size: 14px;
-  font-weight: 400;
-  line-height: 16px;
 }
 .order-placement__check__info__delivery__info {
   display: flex;
@@ -3463,12 +3244,6 @@ body {
   justify-content: space-between;
   align-items: center;
   padding: 16px 0;
-}
-.order-placement__check__info__total-cost {
-  color: #8D191D;
-  font-size: 24px;
-  font-weight: 700;
-  line-height: 28px;
 }
 .order-placement__check__info__total-cost span {
   color: #111;
@@ -3525,28 +3300,6 @@ body {
 
 .close-soon {
   opacity: 0.4;
-}
-
-.order-placement__check__info__total-cost, .order-placement__check__info__delivery__price-cost, .order-placement__check__info__price-cost, .order-placement-remained__content__list__item__info-cost, .order-placement__check__info__list__item__info-cost {
-  display: flex;
-  align-self: center;
-  align-items: center;
-  gap: 4px;
-  color: #8D191D;
-}
-.order-placement__check__info__total-cost span, .order-placement__check__info__delivery__price-cost span, .order-placement__check__info__price-cost span, .order-placement-remained__content__list__item__info-cost span, .order-placement__check__info__list__item__info-cost span {
-  position: relative;
-  color: #111;
-}
-.order-placement__check__info__total-cost span:after, .order-placement__check__info__delivery__price-cost span:after, .order-placement__check__info__price-cost span:after, .order-placement-remained__content__list__item__info-cost span:after, .order-placement__check__info__list__item__info-cost span:after {
-  position: absolute;
-  content: "";
-  left: 0;
-  top: 50%;
-  transform: rotate(-15deg) translateX(5%);
-  width: 100%;
-  height: 2px;
-  background: #8D191D;
 }
 
 .modal-order-placement h3 {

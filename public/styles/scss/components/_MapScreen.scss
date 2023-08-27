@@ -22,7 +22,7 @@
         justify-content: space-between;
         &.active {
           span {
-            color: $c-red;
+            color: $c_red;
             font-weight: 700;
           }
         }
@@ -199,7 +199,7 @@
             align-items: center;
             gap: 4px;
             &.active {
-              color: $c-red;
+              color: $c_red;
             }
 
             color: $c-gray;

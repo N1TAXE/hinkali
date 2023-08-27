@@ -23,59 +23,36 @@ const OrdersCard = ({data}) => {
                                     <OrdersStatus status={data.orderStatus}/>
                                 </div>
                                 <div className="orders__modal__content__list">
-                                    <div className="orders__modal__content__list__item">
-                                        <div className="orders__modal__content__list__item__name">
-                                            <div className="orders__modal__content__list__item__name-title">
-                                                {data.orderCourse}
+                                    {Array.from({length:3}, (_,index) => (
+                                        <div className="orders__modal__content__list__item">
+                                            <div className="orders__modal__content__list__item__name">
+                                                <div className="orders__modal__content__list__item__name-title">
+                                                    {data.orderCourse}
+                                                </div>
+                                                <div className="orders__modal__content__list__item__name-cost price--cost">
+                                                    <span>{data.orderOldCost} ₽</span>
+                                                    <h5>{data.orderCost} ₽</h5>
+                                                </div>
                                             </div>
-                                            <div className="orders__modal__content__list__item__name-cost">
-                                                {data.orderCost}
-                                            </div>
-                                        </div>
-                                        <div className="orders__modal__content__list__item-price">
-                                            {data.orderPrice}
-                                        </div>
-                                    </div>
-                                    <div className="orders__modal__content__list__item">
-                                        <div className="orders__modal__content__list__item__name">
-                                            <div className="orders__modal__content__list__item__name-title">
-                                                {data.orderCourse}
-                                            </div>
-                                            <div className="orders__modal__content__list__item__name-cost">
-                                                <span>{data.orderOldCost} ₽</span>
-                                                {data.orderCost} ₽
+                                            <div className="orders__modal__content__list__item-price">
+                                                {data.orderPrice}
                                             </div>
                                         </div>
-                                        <div className="orders__modal__content__list__item-price">
-                                            {data.orderPrice}
-                                        </div>
-                                    </div>
-                                    <div className="orders__modal__content__list__item">
-                                        <div className="orders__modal__content__list__item__name">
-                                            <div className="orders__modal__content__list__item__name-title">
-                                                {data.orderCourse}
-                                            </div>
-                                            <div className="orders__modal__content__list__item__name-cost">
-                                                {data.orderCost}
-                                            </div>
-                                        </div>
-                                        <div className="orders__modal__content__list__item-price">
-                                            {data.orderPrice}
-                                        </div>
-                                    </div>
+                                    ))}
                                 </div>
                                 <div className="orders__modal__content__price">
                                     Стоимость заказа
-                                    <div className="orders__modal__content__price-cost">
-                                        <span>{data.orderOldCost}</span>
-                                        {data.orderCost}
+                                    <div className="orders__modal__content__price-cost price--cost">
+                                        <span><small>{data.orderOldCost} ₽</small></span>
+                                        <h3>{data.orderCost} ₽</h3>
                                     </div>
                                 </div>
                                 <div className="orders__modal__content__delivery">
                                     <div className="orders__modal__content__delivery__price">
                                         Доставка
-                                        <div className="orders__modal__content__delivery__price-cost">
-                                            {data.orderCost}
+                                        <div className="orders__modal__content__delivery__price-cost price--cost">
+                                            <span><small></small></span>
+                                            <h3>{data.orderCost} ₽</h3>
                                         </div>
                                     </div>
                                     <div className="orders__modal__content__delivery__info">
@@ -91,9 +68,9 @@ const OrdersCard = ({data}) => {
                                     </div>
                                     <div className="orders__modal__content__total">
                                         Итого
-                                        <div className="orders__modal__content__total-cost">
+                                        <div className="orders__modal__content__total-cost price--cost">
                                             <span>{data.orderOldCost} ₽</span>
-                                            {data.orderCost} ₽
+                                            <h2>{data.orderCost} ₽</h2>
                                         </div>
                                     </div>
                                     <div className="orders__modal__content__payment">
@@ -143,20 +120,20 @@ const OrdersCard = ({data}) => {
             <div onClick={() => setIsModalOpened(true)} className="orders__list__item">
                 <div className="orders__list__item__header">
                     <div className="orders__list__item__header__info">
-                        <div className="orders__list__item__header__info-numb">{data.orderId}</div>
+                        <h3 className="orders__list__item__header__info-numb">{data.orderId}</h3>
                         <div className="orders__list__item__header__info-date">{data.orderDate}</div>
                     </div>
                     <OrdersStatus status={data.orderStatus}/>
                 </div>
                 <div className="orders__list__item__delivery">
-                    <div className="orders__list__item__delivery-title">Доставка</div>
-                    <div className="orders__list__item__delivery-addresses">{data.orderAddresses}</div>
+                    <h3 className="orders__list__item__delivery-title">Доставка</h3>
+                    <small className="orders__list__item__delivery-addresses">{data.orderAddresses}</small>
                 </div>
                 <div className="orders__list__item__price">
-                    Сумма
-                    <div className="orders__list__item__price-cost">
-                        <span>{data.orderOldCost} ₽</span>
-                        {data.orderCost} ₽
+                    <h3>Сумма</h3>
+                    <div className="orders__list__item__price-cost price--cost">
+                        <span><small>{data.orderOldCost} ₽</small></span>
+                        <h3>{data.orderCost} ₽</h3>
                     </div>
                 </div>
             </div>

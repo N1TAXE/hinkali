@@ -24,7 +24,7 @@ const Basket = observer(() => {
                 return(
                     <div className="basket__content__dozen dozen--one_more">
                         <div className="basket__content__dozen__item dozen--one_more__item">
-                            <div className="basket__content__dozen__item-title dozen--one_more__item-tile">Пожалуйста, добавьте ещё 1 хинкали</div>
+                            <h3 className="basket__content__dozen__item-title dozen--one_more__item-tile">Пожалуйста, добавьте ещё 1 хинкали</h3>
                             <div className="basket__content__dozen__item-addition dozen--one_more__item-addition">Принимается заказ от 3-х хинкали с ЛЮБОЙ начинкой</div>
                         </div>
                     </div>
@@ -43,7 +43,7 @@ const Basket = observer(() => {
                                 </div>
                             </div>
                             <div className="basket__content__dozen__item__content">
-                                <div className="basket__content__dozen__item__content-title">хинкали до ДЮЖИНЫ!</div>
+                                <h3 className="basket__content__dozen__item__content-title">хинкали до ДЮЖИНЫ!</h3>
                                 <div className="basket__content__dozen__item__content-addition">при заказе 12-ти вы платите за 11!</div>
                             </div>
                         </div>
@@ -63,7 +63,7 @@ const Basket = observer(() => {
                                 </div>
                             </div>
                             <div className="basket__content__dozen__item__content">
-                                <div className="basket__content__dozen__item__content-title">хинкали в подарок!</div>
+                                <h3 className="basket__content__dozen__item__content-title">хинкали в подарок!</h3>
                                 <div className="basket__content__dozen__item__content-addition">Условия акции выполнены</div>
                             </div>
                         </div>
@@ -187,9 +187,9 @@ const Basket = observer(() => {
                                                     35 ₽ / шт.
                                                 </div>
                                             </div>
-                                            <div className="basket__content__product_card__info__price-cost">
-                                                <span>12 ₽</span>
-                                                70 ₽
+                                            <div className="basket__content__product_card__info__price-cost price--cost">
+                                                <span><small>12 ₽</small></span>
+                                                <h3>70 ₽</h3>
                                             </div>
                                         </div>
                                         <div className="basket__content__product_card__info__buttons">
@@ -216,7 +216,7 @@ const Basket = observer(() => {
                                     <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
                                         <path d="M8.1 13.34L10.93 10.51L4.74 4.32996C4.26 3.84996 3.43 3.97996 3.13 4.59996C2.42 6.08996 2.68 7.91996 3.91 9.15996L8.1 13.34ZM14.88 11.53C16.41 12.24 18.56 11.74 20.15 10.15C22.06 8.23996 22.43 5.49996 20.96 4.02996C19.5 2.56996 16.76 2.92996 14.84 4.83996C13.25 6.42996 12.75 8.57996 13.46 10.11L4.4 19.17C4.01 19.56 4.01 20.19 4.4 20.58C4.79 20.97 5.42 20.97 5.81 20.58L12 14.41L18.18 20.59C18.57 20.98 19.2 20.98 19.59 20.59C19.98 20.2 19.98 19.57 19.59 19.18L13.41 13L14.88 11.53Z" fill="#111111"/>
                                     </svg>
-                                    Приборы
+                                    <h4>Приборы</h4>
                                 </div>
                                 <div className="basket__content__tableware-buttons">
                                     {isWare && (
@@ -252,9 +252,9 @@ const Basket = observer(() => {
                             <div className="basket__content__price">
                                 <div className="basket__content__price__item">
                                     Стоимость заказа
-                                    <div className="basket__content__price__item-cost">
+                                    <div className="basket__content__price__item-cost price--cost">
                                         <span>12 ₽</span>
-                                        115 ₽
+                                        <h2>115 ₽</h2>
                                     </div>
                                 </div>
                                 <span className="validate validate-additional">
@@ -266,7 +266,7 @@ const Basket = observer(() => {
                             </div>
                         </div>
                         <div className="basket__more">
-                            <div className="basket__more-title">Может, что‑нибудь ещё?</div>
+                            <h3 className="basket__more-title">Может, что‑нибудь ещё?</h3>
                             <div className="basket__more__content">
                                 {products && products.map((item)=>(
                                     <ProductCard page={'basket'} data={item} key={item.id}/>
@@ -275,13 +275,13 @@ const Basket = observer(() => {
                         </div>
                         <div className="basket__buttons">
                             <div className="basket__buttons__total">
-                                <div className="basket__buttons__total-title">
+                                <h3 className="basket__buttons__total-title">
                                     Стоимость заказа
-                                </div>
+                                </h3>
                                 <div className="basket__buttons__total__price">
-                                    <div className="basket__buttons__total__price-cost">
+                                    <div className="basket__buttons__total__price-cost price--cost">
                                         <span>100 ₽</span>
-                                        150 ₽
+                                        <h2>150 ₽</h2>
                                     </div>
                                 </div>
                             </div>

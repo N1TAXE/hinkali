@@ -18,12 +18,12 @@ const Auth = observer(() => {
                     <React.Fragment>
                         <div className="auth-content unauthorized__content">
                             <div className="auth-content__info">
-                                <div className="auth-content__info-title">
+                                <h2 className="auth-content__info-title">
                                     Укажите номер телефона
-                                </div>
-                                <div className="auth-content__info-text">
+                                </h2>
+                                <p className="auth-content__info-text">
                                     Чтобы быстро совершать заказы, получать скидки и использовать все преимущества регистрации
-                                </div>
+                                </p>
                             </div>
                             <div className="auth-content__inputs">
                                 <div className="input__item input_icon input_icon_left">
@@ -61,15 +61,15 @@ const Auth = observer(() => {
                     <React.Fragment>
                         <div className="auth-content unauthorized__content">
                             <div className="auth-content__info">
-                                <div className="auth-content__info-title">
+                                <h2 className="auth-content__info-title">
                                     Введите код из СМС
-                                </div>
-                                <div className="auth-content__info-text">
+                                </h2>
+                                <p className="auth-content__info-text">
                                     Код отправлен на номер
-                                </div>
-                                <div className="auth-content__info-numb">
+                                </p>
+                                <h3 className="auth-content__info-numb">
                                     +7 999 360-19-36
-                                </div>
+                                </h3>
                             </div>
                             <div className="auth-content__inputs">
                                 <div className="auth-content__inputs-sms validate--error">
