@@ -323,5 +323,11 @@
     flex-direction: column;
     gap: 8px;
     padding: 16px;
+    button{
+      img{
+        width: 24px;
+        height: 24px;
+      }
+    }
   }
 }

@@ -85,6 +85,10 @@
           line-height: 16px;
         }
       }
+      img{
+        width: 24px;
+        height: 24px;
+      }
     }
   }
 
@@ -94,6 +98,10 @@
     align-items: center;
     gap: 8px;
     padding: 6px 8px;
+    img{
+      width: 36px;
+      height: 36px;
+    }
   }
 
   &-full-link{

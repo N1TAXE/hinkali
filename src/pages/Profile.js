@@ -11,6 +11,8 @@ import {
 import ModalCard from "../components/ModalCard";
 import {observer} from "mobx-react-lite";
 import {Context} from "../index";
+import iconInfo from "../assets/images/icons/info.png";
+import iconLogout from "../assets/images/icons/logout.png";
 
 const Profile = observer(() => {
     const {globals} = useContext(Context)
@@ -51,9 +53,7 @@ const Profile = observer(() => {
                         <div className="profile-content__gift-header">
                             <h3>Получи дюжину хинкали в подарок!</h3>
                             <button className="btn btn-none">
-                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
-                                    <path d="M11 7H13V9H11V7ZM12 17C12.55 17 13 16.55 13 16V12C13 11.45 12.55 11 12 11C11.45 11 11 11.45 11 12V16C11 16.55 11.45 17 12 17ZM12 2C6.48 2 2 6.48 2 12C2 17.52 6.48 22 12 22C17.52 22 22 17.52 22 12C22 6.48 17.52 2 12 2ZM12 20C7.59 20 4 16.41 4 12C4 7.59 7.59 4 12 4C16.41 4 20 7.59 20 12C20 16.41 16.41 20 12 20Z" fill="white"/>
-                                </svg>
+                                <img src={iconInfo} alt=""/>
                             </button>
                         </div>
                         <div className="profile-content__gift__content">
@@ -96,11 +96,7 @@ const Profile = observer(() => {
                 </div>
                 <div className="profile__button">
                     <button onClick={() => setIsModalOpened(true)} className="btn btn-none btn-none-defualt">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="25" height="24" viewBox="0 0 25 24" fill="none">
-                            <path
-                                d="M15.825 16.275C15.6417 16.0583 15.55 15.8125 15.55 15.5375C15.55 15.2625 15.6417 15.0333 15.825 14.85L17.675 13H10.5C10.2167 13 9.97917 12.9042 9.7875 12.7125C9.59583 12.5208 9.5 12.2833 9.5 12C9.5 11.7167 9.59583 11.4792 9.7875 11.2875C9.97917 11.0958 10.2167 11 10.5 11H17.675L15.825 9.15C15.625 8.95 15.525 8.7125 15.525 8.4375C15.525 8.1625 15.625 7.925 15.825 7.725C16.0083 7.525 16.2375 7.425 16.5125 7.425C16.7875 7.425 17.0167 7.51667 17.2 7.7L20.8 11.3C20.9 11.4 20.9708 11.5083 21.0125 11.625C21.0542 11.7417 21.075 11.8667 21.075 12C21.075 12.1333 21.0542 12.2583 21.0125 12.375C20.9708 12.4917 20.9 12.6 20.8 12.7L17.2 16.3C16.9833 16.5167 16.7458 16.6125 16.4875 16.5875C16.2292 16.5625 16.0083 16.4583 15.825 16.275ZM5.5 21C4.95 21 4.47917 20.8042 4.0875 20.4125C3.69583 20.0208 3.5 19.55 3.5 19V5C3.5 4.45 3.69583 3.97917 4.0875 3.5875C4.47917 3.19583 4.95 3 5.5 3H11.5C11.7833 3 12.0208 3.09583 12.2125 3.2875C12.4042 3.47917 12.5 3.71667 12.5 4C12.5 4.28333 12.4042 4.52083 12.2125 4.7125C12.0208 4.90417 11.7833 5 11.5 5H5.5V19H11.5C11.7833 19 12.0208 19.0958 12.2125 19.2875C12.4042 19.4792 12.5 19.7167 12.5 20C12.5 20.2833 12.4042 20.5208 12.2125 20.7125C12.0208 20.9042 11.7833 21 11.5 21H5.5Z"
-                                fill="#8D191D"/>
-                        </svg>
+                        <img src={iconLogout} alt=""/>
                         Выйти из аккаунта
                     </button>
                 </div>

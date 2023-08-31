@@ -203,6 +203,10 @@
       box-shadow: 0px -4px 20px 0px rgba(0, 0, 0, 0.12);
       button {
         width: 100%;
+        img{
+          width: 24px;
+          height: 24px;
+        }
       }
       .input__counter {
         width: 100%;

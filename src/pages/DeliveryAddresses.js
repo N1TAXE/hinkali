@@ -8,6 +8,8 @@ import {PROFILE_ROUTE} from "../utils/consts";
 import ModalCard from "../components/ModalCard";
 import UnAuthorized from "../components/UnAuthorized";
 import Authorized from "../components/Authorized";
+import iconAddWhite from "../assets/images/icons/add_white.png";
+import iconClose from "../assets/images/icons/close.png";
 
 const DeliveryAddresses = observer(() => {
     const {globals} = useContext(Context)
@@ -44,9 +46,7 @@ const DeliveryAddresses = observer(() => {
                         </div>
                         <div className="delivery-addresses__buttons">
                             <button onClick={() => setIsModalOpened(true)} className="btn btn-md btn-red gap-4">
-                                <svg xmlns="http://www.w3.org/2000/svg" width="25" height="24" viewBox="0 0 25 24" fill="none">
-                                    <path d="M18.5 13H13.5V18C13.5 18.55 13.05 19 12.5 19C11.95 19 11.5 18.55 11.5 18V13H6.5C5.95 13 5.5 12.55 5.5 12C5.5 11.45 5.95 11 6.5 11H11.5V6C11.5 5.45 11.95 5 12.5 5C13.05 5 13.5 5.45 13.5 6V11H18.5C19.05 11 19.5 11.45 19.5 12C19.5 12.55 19.05 13 18.5 13Z" fill="white"/>
-                                </svg>
+                                <img src={iconAddWhite} alt=""/>
                                 Добавить новый адрес
                             </button>
                             <NavLink to={PROFILE_ROUTE} className="btn btn-md btn-gray">Назад</NavLink>
@@ -63,9 +63,9 @@ const DeliveryAddresses = observer(() => {
                     <div className="modal">
                         <div className="modal__wrapper">
                             <div className="modal__header">
-                                <svg className="no-drag" onClick={() => setIsModalOpened(false)} width="48" height="48" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                    <path d="M30.3 17.71C29.91 17.32 29.28 17.32 28.89 17.71L24 22.59L19.11 17.7C18.72 17.31 18.09 17.31 17.7 17.7C17.31 18.09 17.31 18.72 17.7 19.11L22.59 24L17.7 28.89C17.31 29.28 17.31 29.91 17.7 30.3C18.09 30.69 18.72 30.69 19.11 30.3L24 25.41L28.89 30.3C29.28 30.69 29.91 30.69 30.3 30.3C30.69 29.91 30.69 29.28 30.3 28.89L25.41 24L30.3 19.11C30.68 18.73 30.68 18.09 30.3 17.71Z" fill="#8D191D"/>
-                                </svg>
+                                <div onClick={() => setIsModalOpened(false)} className="modal__header-btn no-drag">
+                                    <img src={iconClose} alt=""/>
+                                </div>
                                 <h3>Добавить новый адрес</h3>
                             </div>
                             <div className="modal__content gap-8">

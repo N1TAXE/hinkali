@@ -11,16 +11,18 @@
   &-error{
     color: $c_red;
 
-    svg{
-      fill: #8D191D;
+    img{
+      width: 16px;
+      height: 16px;
     }
   }
 
   &-additional{
     color: #4D4D4D;
 
-    svg{
-      fill: #4D4D4D;
+    img{
+      width: 16px;
+      height: 16px;
     }
   }
 

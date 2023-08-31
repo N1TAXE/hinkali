@@ -153,7 +153,6 @@
     &.added{
       button{
         background: #8D191D;
-
         svg{
           fill: #fff;
 
@@ -247,6 +246,7 @@
 
     &__button{
       button{
+        height: 28px;
         svg{
           fill: #8D191D;
           path{

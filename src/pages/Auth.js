@@ -5,6 +5,8 @@ import TabBar from "../components/TabBar";
 import TopBar from "../components/TopBar";
 import {observer} from "mobx-react-lite";
 import {Context} from "../index";
+import iconPhone from "../assets/images/icons/phone_gray.png"
+import iconWarning from "../assets/images/icons/warning.png";
 
 const Auth = observer(() => {
     const {globals} = useContext(Context)
@@ -28,9 +30,7 @@ const Auth = observer(() => {
                             <div className="auth-content__inputs">
                                 <div className="input__item input_icon input_icon_left">
                                     <div className="input__container">
-                                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
-                                            <path d="M19.95 21C17.8 21 15.7042 20.5208 13.6625 19.5625C11.6208 18.6042 9.8125 17.3375 8.2375 15.7625C6.6625 14.1875 5.39583 12.3792 4.4375 10.3375C3.47917 8.29583 3 6.2 3 4.05C3 3.75 3.1 3.5 3.3 3.3C3.5 3.1 3.75 3 4.05 3H8.1C8.33333 3 8.54167 3.075 8.725 3.225C8.90833 3.375 9.01667 3.56667 9.05 3.8L9.7 7.3C9.73333 7.53333 9.72917 7.74583 9.6875 7.9375C9.64583 8.12917 9.55 8.3 9.4 8.45L6.975 10.9C7.675 12.1 8.55417 13.225 9.6125 14.275C10.6708 15.325 11.8333 16.2333 13.1 17L15.45 14.65C15.6 14.5 15.7958 14.3875 16.0375 14.3125C16.2792 14.2375 16.5167 14.2167 16.75 14.25L20.2 14.95C20.4333 15 20.625 15.1125 20.775 15.2875C20.925 15.4625 21 15.6667 21 15.9V19.95C21 20.25 20.9 20.5 20.7 20.7C20.5 20.9 20.25 21 19.95 21ZM6.025 9L7.675 7.35L7.25 5H5.025C5.10833 5.68333 5.225 6.35833 5.375 7.025C5.525 7.69167 5.74167 8.35 6.025 9ZM19 18.95V16.75L16.65 16.275L14.975 17.95C15.625 18.2333 16.2875 18.4583 16.9625 18.625C17.6375 18.7917 18.3167 18.9 19 18.95Z" fill="#999999"/>
-                                        </svg>
+                                        <img src={iconPhone} alt=""/>
                                         <input placeholder="+7 (___) ___-__-__" name="search" type="tel"/>
                                     </div>
                                 </div>
@@ -80,9 +80,7 @@ const Auth = observer(() => {
                                     ))}
                                 </div>
                                 <span className="validate validate-error">
-                                    <svg xmlns="http://www.w3.org/2000/svg" width="17" height="16" viewBox="0 0 17 16" fill="none">
-                                        <path d="M8.5 3.99329L13.52 12.6666H3.48L8.5 3.99329ZM2.32667 12C1.81333 12.8866 2.45333 14 3.48 14H13.52C14.5467 14 15.1867 12.8866 14.6733 12L9.65333 3.32662C9.14 2.43995 7.86 2.43995 7.34667 3.32662L2.32667 12ZM7.83333 7.33329V8.66662C7.83333 9.03329 8.13333 9.33329 8.5 9.33329C8.86667 9.33329 9.16667 9.03329 9.16667 8.66662V7.33329C9.16667 6.96662 8.86667 6.66662 8.5 6.66662C8.13333 6.66662 7.83333 6.96662 7.83333 7.33329ZM7.83333 10.6666H9.16667V12H7.83333V10.6666Z" fill="#8D191D"/>
-                                    </svg>
+                                    <img src={iconWarning} alt=""/>
                                     Неверный код, попробуйте ещё раз
                                 </span>
                             </div>

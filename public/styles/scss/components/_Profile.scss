@@ -43,7 +43,7 @@
 
         button{
           padding: 4px;
-          svg{
+          img{
             width: 24px;
             height: 24px;
           }
@@ -105,5 +105,11 @@
     display: flex;
     flex-direction: column;
     padding: 16px;
+    button{
+      img{
+        width: 24px;
+        height: 24px;
+      }
+    }
   }
 }
